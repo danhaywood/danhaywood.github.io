@@ -1,0 +1,39 @@
+# General
+name: Dan Haywood
+description: "domain driven design, apache&nbsp;isis, restful&nbspobjects, naked&nbsp;objects, agile, tdd"
+url: http://localhost:4000
+
+exclude: _zzz, Gemfile.lock
+
+#markdown: redcarpet
+#highlighter: pygments
+markdown: kramdown
+highlighter: rouge
+
+paginate: 10
+permalink: /:year/:month/:day/:title/
+
+# Social share and comments.
+disqus-id: danhaywood
+twitter: dkhaywood
+github: danhaywood
+google: +DanHaywood
+
+linkedin: dkhaywood
+youtube: TheDanHaywood
+
+
+# RSS feed
+rss-feed-limit: 10
+rss-show-full: "no"
+
+
+
+# from https://github.com/johncarl81/transfuse-site/blob/master/_config.yml
+
+asciidoctor:
+  attributes:
+    - idseparator=_
+    - source-highlighter=coderay
+    - icons=font
+    - hardbreaks!
