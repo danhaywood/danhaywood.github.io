@@ -1,0 +1,12 @@
+language: ruby
+script: "./build.sh"
+branches:
+  only:
+  - jekyll
+rvm:
+  - 2.2.0
+
+# instead of https://github.com/johncarl81/transfuse-site/commit/5fcd04c32ca140f2ef672104ca23986453a4d8c6#diff-354f30a63fb0907d4ad57269548329e3
+#sudo: false
+#script: bundle exec rake deploy
+
