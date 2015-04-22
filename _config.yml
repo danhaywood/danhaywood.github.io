@@ -1,9 +1,9 @@
 # General
 name: Dan Haywood
 description: "domain driven design, apache&nbsp;isis, restful&nbspobjects, naked&nbsp;objects, agile, tdd"
-url: http://localhost:4000
+#url: http://localhost:4000
 
-exclude: _zzz, Gemfile.lock
+exclude: [_zzz, Gemfile.lock]
 
 #markdown: redcarpet
 #highlighter: pygments
