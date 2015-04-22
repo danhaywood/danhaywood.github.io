@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+         [ANN] Apache Isis version 1.8.0 released
+        
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+
+     <link rel="stylesheet" href="/css/syntax.css" type='text/css'> 
+    <link rel="stylesheet" href="/css/main.css" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Dan Haywood" href="/feed.xml">
+
+    <link href="/css/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="top" class="main-header">
+            
+        <div class="module title color-1" >
+            <h1>
+                <a href="/">
+                    <div>
+                        <span>Dan Haywood</span>
+                    </div>
+                </a>
+            </h1>
+        </div>
+
+        <div class="module description color-3">
+            domain driven design, apache&nbsp;isis, restful&nbspobjects, naked&nbsp;objects, agile, tdd
+        </div>
+
+        <!--
+        <nav class="module main-menu color-4">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+        -->
+
+        <div class="module links color-4">
+            <span class="gravatar">
+                <img src="/images/DanHaywood-2011-280x240.jpg" width="92px"/>
+            </span>
+            <div class="profiles">
+                <a href="https://github.com/danhaywood" title="Profile in Github" target="_blank">github</a>
+                <a href="https://www.youtube.com/user//TheDanHaywood" title="Profile in Google+" target="_blank">Youtube</a>
+                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/dkhaywood" title="Profile in Twitter" target="_blank">twitter</a>
+                <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
+                <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+            </div>
+            
+        </div>
+
+    </header>
+
+    <div class="main-content">
+
+
+    <article class="module color-3 post">
+
+        <div>
+         
+          <span class="previous-link">
+            <i class="fa fa-step-backward"></i>
+            <a rel="prev" href="/2014/12/04/welcoming-martin-grigorov-as-a-new-committer-on-apache-isis/">Previous</a>
+          </span>
+        
+         
+          <span class="next-link" style="float:right;">
+            <a rel="next" href="/2015/04/17/converting-from-hamcrest-to-assertj/">Next</a>
+            <i class="fa fa-step-forward"></i>
+          </span>
+        
+        </div>
+
+        <h1>[ANN] Apache Isis version 1.8.0 released</h1>
+
+
+        <hr>
+
+
+        <p>We just pushed another release of Apache Isis, and it’s a big one! New features in this release include:</p>
+
+<ul>
+  <li>a new theme-able look-n-feel for the Wicket viewer, using <a href="http://www.getbootstrap.com/">Twitter Bootstrap</a> and <a href="http://fortawesome.github.io/Font-Awesome/icons/">font awesome</a> icons</li>
+  <li>a new simplified set of annotations (<code>@Property</code>, <code>@DomainObject</code>, <code>@CollectionLayout</code> etc) to make features more discoverable; see <a href="http://isis.apache.org/intro/resources/cheat-sheet.html">cheat-sheet</a></li>
+  <li>support to enable multi-tenancy (in particular in conjunction with Isis addons <a href="https://github.com/isisaddons/isis-module-security">security module</a>)</li>
+  <li>new <a href="http://isis.apache.org/config/i18n-support.html">i18n support</a> using gettext .po files, honouring user locale</li>
+  <li><a href="http://isis.apache.org/reference/services/user-registration-service.html">sign-up/self-registration</a> support (so that end-users can create own user accounts)</li>
+  <li><code>EmailService</code> for <a href="http://isis.apache.org/reference/services/email-service.html">sending HTML emails</a>, optionally with attachments [7]</li>
+  <li>ability to validate individual parameters imperatively</li>
+  <li>config property to flag use of deprecated annotations/method prefixes</li>
+  <li>Maven plugin to validate domain object model with respect to Isis programming conventions</li>
+  <li>improved support for Neo4J</li>
+  <li>experimental support for more <a href="http://isis.apache.org/components/viewers/restfulobjects/suppressing-elements-of-the-representations.html">flexibility of generating Restful Objects representations</a></li>
+</ul>
+
+<p>Full release notes are available on the <a href="http://isis.apache.org/core/release-notes/isis-1.8.0.html">Isis website</a>.</p>
+
+<p>As of 1.8.0 we’re continuing to trim down and simplify.  To that end, the Wicket Viewer is bundled in with Core, while the ToDoApp archetype is no longer provided.  In its place the <a href="https://github.com/isisaddons/isis-app-todoapp">example todoapp</a> is available from Isis addons (not ASF) to fork and adapt.</p>
+
+<p>Also, I should point out that this release finally drops support for JDK 1.6, standardizes on JDK 1.7</p>
+
+
+        <span class="date">February 24, 2015</span>
+        <span class="category"> announce  isis  bootstrap  i18n  isisaddons  java  neo4j </span>
+
+
+    </article>
+
+
+    <div class="social module color-4">
+        <ul>
+
+            
+
+            
+
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=[ANN] Apache Isis version 1.8.0 released&u=/2015/02/24/ann-apache-isis-version-1-8-0-released/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=[ANN] Apache Isis version 1.8.0 released&url=/2015/02/24/ann-apache-isis-version-1-8-0-released/&via=dkhaywood&hashtags=announce,isis,bootstrap,i18n,isisaddons,java,neo4j,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2015/02/24/ann-apache-isis-version-1-8-0-released/">Google+</a></li>
+        </ul>
+
+    </div>
+
+    
+
+<div class="module color-3">
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'danhaywood';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+</div>
+
+
+
+
+
+    <div class="footer module">
+    <span class="licence">Copyright 2015 &copy; Minimal-block.</span>
+    <p>
+        Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyllrb</a>.
+        The <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block theme.</a>
+    </p>
+</div>
+
+</body>
+</html>

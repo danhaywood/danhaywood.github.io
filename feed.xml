@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Dan Haywood</title>
+        <description>domain driven design, apache&amp;nbsp;isis, restful&amp;nbspobjects, naked&amp;nbsp;objects, agile, tdd</description>
+        <link></link>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>An adapter to use Hamcrest matchers as AssertJ conditions</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Following on from yesterday’s post on AssertJ, here’s a tiny github repo that I put together with some utilities for AssertJ.
+
+</description>
+                
+                            <pubDate>Sat, 18 Apr 2015 06:37:42 +0000</pubDate>
+                <link>/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/</link>
+                <guid isPermaLink="true">/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/</guid>
+            </item>
+        
+            <item>
+                <title>Converting from Hamcrest to AssertJ</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Don’t quite know how I missed it all these years, but I only recently discovered AssertJ.  So I’ve started to use it in some of the Isis Addons example apps, for example the todoapp.
+
+</description>
+                
+                            <pubDate>Fri, 17 Apr 2015 04:53:28 +0000</pubDate>
+                <link>/2015/04/17/converting-from-hamcrest-to-assertj/</link>
+                <guid isPermaLink="true">/2015/04/17/converting-from-hamcrest-to-assertj/</guid>
+            </item>
+        
+            <item>
+                <title>[ANN] Apache Isis version 1.8.0 released</title>
+                <dc:creator></dc:creator>
+                
+                    <description>We just pushed another release of Apache Isis, and it’s a big one! New features in this release include:
+
+</description>
+                
+                            <pubDate>Tue, 24 Feb 2015 08:45:20 +0000</pubDate>
+                <link>/2015/02/24/ann-apache-isis-version-1-8-0-released/</link>
+                <guid isPermaLink="true">/2015/02/24/ann-apache-isis-version-1-8-0-released/</guid>
+            </item>
+        
+            <item>
+                <title>Welcoming Martin Grigorov as a new committer on Apache Isis</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Martin Grigorov is now a committer and PMC member of Apache Isis.</description>
+                
+                            <pubDate>Thu, 04 Dec 2014 22:00:03 +0000</pubDate>
+                <link>/2014/12/04/welcoming-martin-grigorov-as-a-new-committer-on-apache-isis/</link>
+                <guid isPermaLink="true">/2014/12/04/welcoming-martin-grigorov-as-a-new-committer-on-apache-isis/</guid>
+            </item>
+        
+            <item>
+                <title>[ANN] Apache Isis version 1.7.0 Released</title>
+                <dc:creator></dc:creator>
+                
+                    <description>We just pushed out Isis 1.7.0, which consists of:
+
+</description>
+                
+                            <pubDate>Tue, 21 Oct 2014 06:20:34 +0000</pubDate>
+                <link>/2014/10/21/ann-apache-isis-version-1-7-0-released/</link>
+                <guid isPermaLink="true">/2014/10/21/ann-apache-isis-version-1-7-0-released/</guid>
+            </item>
+        
+            <item>
+                <title>[ANN] Apache Isis version 1.6.0 Released</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Apache Isis 1.6.0 has been released, including new and improved event bus stuff to decouple business logic within the apps, and a new companion www.isisaddons.org for housing third-party modules.</description>
+                
+                            <pubDate>Mon, 28 Jul 2014 17:50:34 +0000</pubDate>
+                <link>/2014/07/28/ann-apache-isis-version-1-6-0-released/</link>
+                <guid isPermaLink="true">/2014/07/28/ann-apache-isis-version-1-6-0-released/</guid>
+            </item>
+        
+            <item>
+                <title>[ANN] Apache Isis version 1.5.0 and related components Released</title>
+                <dc:creator></dc:creator>
+                
+                    <description>The Isis team is pleased to announce the release of:
+
+</description>
+                
+                            <pubDate>Sat, 07 Jun 2014 18:21:32 +0000</pubDate>
+                <link>/2014/06/07/ann-apache-isis-version-1-5-0-and-related-components-released/</link>
+                <guid isPermaLink="true">/2014/06/07/ann-apache-isis-version-1-5-0-and-related-components-released/</guid>
+            </item>
+        
+            <item>
+                <title>Isis 1.4.0 released</title>
+                <dc:creator></dc:creator>
+                
+                    <description>After 4 months development, we’ve just released Apache Isis 1.4.0, and supporting components.
+
+</description>
+                
+                            <pubDate>Fri, 14 Mar 2014 19:07:33 +0000</pubDate>
+                <link>/2014/03/14/isis-1-4-0-released/</link>
+                <guid isPermaLink="true">/2014/03/14/isis-1-4-0-released/</guid>
+            </item>
+        
+            <item>
+                <title>Isis 1.3.0 - crammed full of goodies!</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Over on Apache Isis, we’ve just released a new version, 1.3.0, of the framework (core plus supporting components).
+
+</description>
+                
+                            <pubDate>Fri, 25 Oct 2013 18:00:45 +0000</pubDate>
+                <link>/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</link>
+                <guid isPermaLink="true">/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</guid>
+            </item>
+        
+            <item>
+                <title>Welcoming Oscar Bou as a new committer to Apache Isis</title>
+                <dc:creator></dc:creator>
+                
+                    <description>I’m delighted to announce that Oscar Bou has been voted in as a committer on Apache Isis, and also to as a member of the Isis PMC. The first gives Oscar the right to commit changes directly to Isis’ codebase, the second gives him the right to be i...</description>
+                
+                            <pubDate>Mon, 12 Aug 2013 10:07:16 +0000</pubDate>
+                <link>/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</link>
+                <guid isPermaLink="true">/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</guid>
+            </item>
+        
+    </channel>
+</rss>

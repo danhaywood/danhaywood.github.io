@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+         An adapter to use Hamcrest matchers as AssertJ conditions
+        
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+
+     <link rel="stylesheet" href="/css/syntax.css" type='text/css'> 
+    <link rel="stylesheet" href="/css/main.css" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Dan Haywood" href="/feed.xml">
+
+    <link href="/css/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="top" class="main-header">
+            
+        <div class="module title color-1" >
+            <h1>
+                <a href="/">
+                    <div>
+                        <span>Dan Haywood</span>
+                    </div>
+                </a>
+            </h1>
+        </div>
+
+        <div class="module description color-3">
+            domain driven design, apache&nbsp;isis, restful&nbspobjects, naked&nbsp;objects, agile, tdd
+        </div>
+
+        <!--
+        <nav class="module main-menu color-4">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+        -->
+
+        <div class="module links color-4">
+            <span class="gravatar">
+                <img src="/images/DanHaywood-2011-280x240.jpg" width="92px"/>
+            </span>
+            <div class="profiles">
+                <a href="https://github.com/danhaywood" title="Profile in Github" target="_blank">github</a>
+                <a href="https://www.youtube.com/user//TheDanHaywood" title="Profile in Google+" target="_blank">Youtube</a>
+                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/dkhaywood" title="Profile in Twitter" target="_blank">twitter</a>
+                <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
+                <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+            </div>
+            
+        </div>
+
+    </header>
+
+    <div class="main-content">
+
+
+    <article class="module color-3 post">
+
+        <div>
+         
+          <span class="previous-link">
+            <i class="fa fa-step-backward"></i>
+            <a rel="prev" href="/2015/04/17/converting-from-hamcrest-to-assertj/">Previous</a>
+          </span>
+        
+        
+        </div>
+
+        <h1>An adapter to use Hamcrest matchers as AssertJ conditions</h1>
+
+
+        <hr>
+
+
+        <p>Following on from <a href="/2015/04/17/converting-from-hamcrest-to-assertj/">yesterday’s post</a> on AssertJ, here’s a tiny <a href="https://github.com/danhaywood/java-assertjext">github repo</a> that I put together with some utilities for AssertJ.</p>
+
+<p>The first is the script mentioned yesterday, tidied up a little and renamed.</p>
+
+<p>The second is a little adapter class that allows you to use Hamcrest Matchers as AssertJ Conditions.  So, if you have some really complex Hamcrest matcher stuff, you can migrate it easily:</p>
+
+<p><code>java
+final String actual = "how now brown cow";
+ assertThat(actual).is(matchedBy(Matchers.containsString("now brown")));
+</code>`</p>
+
+<p>The adapter is provided by that “matchedBy” factory method.  But the github repo has a full README for details.</p>
+
+
+        <span class="date">April 18, 2015</span>
+        <span class="category"> assertj  hamcrest  java  junit  tdd </span>
+
+
+    </article>
+
+
+    <div class="social module color-4">
+        <ul>
+
+            
+
+            
+
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=An adapter to use Hamcrest matchers as AssertJ conditions&u=/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=An adapter to use Hamcrest matchers as AssertJ conditions&url=/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/&via=dkhaywood&hashtags=assertj,hamcrest,java,junit,tdd,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/">Google+</a></li>
+        </ul>
+
+    </div>
+
+    
+
+<div class="module color-3">
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'danhaywood';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+</div>
+
+
+
+
+
+    <div class="footer module">
+    <span class="licence">Copyright 2015 &copy; Minimal-block.</span>
+    <p>
+        Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyllrb</a>.
+        The <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block theme.</a>
+    </p>
+</div>
+
+</body>
+</html>
