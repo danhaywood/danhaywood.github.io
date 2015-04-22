@@ -33,7 +33,7 @@ pushd site
 touch .nojekyll
 rm build.sh
 
-cat "branches:
+echo "branches:
   only:
   - jekyll
 " > .travis.yml
