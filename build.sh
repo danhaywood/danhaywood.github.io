@@ -33,6 +33,10 @@ pushd site
 touch .nojekyll
 rm build.sh
 
+cat "branches:
+  only:
+  - jekyll
+" > .travis.yml
 
 echo -e "Committing site\n"
 git add -A .
