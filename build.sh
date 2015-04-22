@@ -20,19 +20,25 @@ git config --global user.name "Travis"
 echo -e "Cloning master\n"
 git clone -b master https://${GH_TOKEN}@github.com/danhaywood/danhaywood.github.io.git site
 
+# should we zap everything before re-adding?
+#pushd site
+#git rm -rf *
+#popd
+
 echo -e "Building Jekyll site\n"
 jekyll build -d site
 
-cd site
+pushd site
 
 touch .nojekyll
 rm build.sh
 
 
 echo -e "Committing site\n"
+git add -A .
 git commit -a -m "Travis build $TRAVIS_BUILD_NUMBER"
 git push --quiet origin master > /dev/null 2>&1
 
-cd ..
+popd
 rm -rf site
 
