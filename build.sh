@@ -40,8 +40,13 @@ echo "branches:
 
 echo -e "Committing site\n"
 git add -A .
-git commit -a -m "Travis build $TRAVIS_BUILD_NUMBER"
-git push --quiet origin master > /dev/null 2>&1
+
+if [ -n "$(git status --porcelain)" ]; then 
+  git commit -a -m "Travis build $TRAVIS_BUILD_NUMBER"
+  git push --quiet origin master > /dev/null 2>&1
+else 
+  echo "... no changes to commit";
+fi
 
 popd
 rm -rf site
