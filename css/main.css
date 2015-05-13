@@ -103,17 +103,17 @@ article p a:hover, article p a:active {
     width: 35%;
 }
 
-    .main-header h1 {
-        font-weight: 300;
-        margin: 0;
-    }
+.main-header h1 {
+    font-weight: 300;
+    margin: 0;
+}
 
-    .main-header a {
-        color: #f5f5f5;
-        text-transform: uppercase;
-    }
+.main-header a {
+    color: #f5f5f5;
+    text-transform: uppercase;
+}
 
-    .main-header a:hover, .main-header a:focus { color: #e1e1e1; }
+.main-header a:hover, .main-header a:focus { color: #e1e1e1; }
 
 
 .main-header .color-3 { 
@@ -202,18 +202,21 @@ hr {
     position: relative;
 }
 
-    .main-content .module {
-        border-bottom: 2px solid #b1b1b1;
-        font-size: 0.8em;
-        margin-right: 1em;
-    }
+.main-content .module {
+    border-bottom: 2px solid #b1b1b1;
+    font-size: 0.8em;
+    margin-right: 1em;
+}
+.main-content .module.post {
+    padding-bottom: 2.5em;
+}
 
-    .module img {
-        height: auto;
-        max-width: 100%;
-    }
+.module img {
+    height: auto;
+    max-width: 100%;
+}
 
-    nav.module { padding-top: 1.5em; }
+nav.module { padding-top: 1.5em; }
 
 
 /* ------------------------------------------------------------------------
