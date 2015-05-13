@@ -26,4 +26,4 @@ final String actual = "how now brown cow";
  assertThat(actual).is(matchedBy(Matchers.containsString("now brown")));
 ````
 
-The adapter is provided by that "matchedBy" factory method.  But the github repo has a full README for details.
+The adapter is provided by that "matchedBy" factory method.  But the [github repo](https://github.com/danhaywood/java-assertjext) has a full README for details.
