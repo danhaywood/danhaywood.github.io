@@ -10,7 +10,7 @@ exclude: [_README, _zzz, Gemfile.lock]
 markdown: kramdown
 highlighter: coderay
 
-paginate: 10
+paginate: 50
 permalink: /:year/:month/:day/:title/
 
 # Social share and comments.
