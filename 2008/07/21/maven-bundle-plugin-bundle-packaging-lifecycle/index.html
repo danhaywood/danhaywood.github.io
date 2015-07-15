@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-         Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0
+         maven-bundle-plugin bundle packaging lifecycle
         
     </title>
 
@@ -73,48 +73,34 @@
     <article class="module color-3 post">
 
         <div class="navigation">
-         
-          <span class="previous-link">
-            <i class="fa fa-step-backward"></i>
-            <a rel="prev" href="/2013/01/24/apache-isis-release-v1-0-0/">Previous</a>
-          </span>
         
          
           <span class="next-link" style="float:right;">
-            <a rel="next" href="/2013/02/07/release-of-apache-isis-core-1-2-0-and-components/">Next</a>
+            <a rel="next" href="/2008/08/11/collectionutils-transformedcollection-subtlety-or-bug/">Next</a>
             <i class="fa fa-step-forward"></i>
           </span>
         
         </div>
 
-        <h1>Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0</h1>
+        <h1>maven-bundle-plugin bundle packaging lifecycle</h1>
 
 
         <hr>
 
 
         <div class="content">
-        <p>A few days ago we pushed out a new point release of <a href="http://isis.apache.org">Apache Isis</a> Core (v1.1.0), along with two of its components Isis Shiro Security (v1.1.0) and the Isis Wicket Viewer (v1.1.0).  The Quickstart Archetype that combines Wicket, Shiro, Restful and JDO also got an update (v1.0.2).</p>
+        <p>In Maven the  element in the <code>pom.xml</code> corresponds to a lifecycle to use to build the code.  The lifecycle in turn comprises a number of phases, each of which is bound to goals provided by plugins.  (NB: since this is a 1:1 relationship we can use packaging and lifecycle interchangeably).</p>
 
-<p>New and notable features in this release are:</p>
+<p>The Maven defaults for lifecycles, phases and phase-to-goal bindings are in a file called component.xml.  For Maven 2.0.x this lives <a href="http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-core/src/main/resources/META-INF/plexus/components.xml">here</a>.</p>
 
-<ul>
-  <li>upload/download of files in the Wicket viewer</li>
-  <li>support for bulk actions in the Wicket viewer</li>
-  <li>improved extensibility of Wicket viewer (eg for gmap3 support)</li>
-  <li>support for LDAP authorization through a Shiro Realm implementation</li>
-</ul>
+<p>There are three lifecycles: ‘default’, ‘clean’ and ‘site’, the first being by far the most involved and including compilation, running tests etc.  More detail on Maven lifecycles <a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">here</a>.</p>
 
-<p>Full release notes are of course available on the <a href="http://isis.apache.org">Isis website</a>.</p>
-
-<p>You might also want to check out a companion <a href="https://github.com/danhaywood/isis-wicket-gmap3">github repo</a> that I set up for the gmap3 support.  This will allow you to customize the Wicket UI.</p>
-
-<p>UPDATE: the gmap3 component has moved to <a href="http://isisaddons.org">Isis addons</a>.</p>
+<p>It is also possible for Maven plugins to define their own lifecycle (as per the <a href="http://www.sonatype.com/book/reference/writing-plugins.html#d0e21193">Maven book</a>), provided that they specify true.  So for example the maven-bundle-plugin does exactly this, defining a ‘bundle’ lifecycle.  The phases and goal bindings for this lifecycle are similar to the ‘default’ lifecycle.  See the maven-bundle-plugin’s <a href="http://svn.apache.org/repos/asf/felix/releases/maven-bundle-plugin-1.4.1/src/main/resources/META-INF/plexus/components.xml">components.xml here</a>.</p>
 
         </div>
 
-        <span class="date">February 07, 2013</span>
-        <span class="category"> announce  isis  shiro  wicket  gmap3  java </span>
+        <span class="date">July 21, 2008</span>
+        <span class="category"> maven  java </span>
 
 
     </article>
@@ -133,19 +119,11 @@
             
                 
             
-                
-            
-                
-            
-                
-            
-                
-            
 
             <li class="fb">
-            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0&u=/2013/02/07/apache-isis-core-1-1-0-isis-shiro-security-1-1-0-isis-wicket-viewer-1-1-0/">Facebook</a></li>
-            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0&url=/2013/02/07/apache-isis-core-1-1-0-isis-shiro-security-1-1-0-isis-wicket-viewer-1-1-0/&via=dkhaywood&hashtags=announce,isis,shiro,wicket,gmap3,java,">Twitter</a></li>
-            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2013/02/07/apache-isis-core-1-1-0-isis-shiro-security-1-1-0-isis-wicket-viewer-1-1-0/">Google+</a></li>
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=maven-bundle-plugin bundle packaging lifecycle&u=/2008/07/21/maven-bundle-plugin-bundle-packaging-lifecycle/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=maven-bundle-plugin bundle packaging lifecycle&url=/2008/07/21/maven-bundle-plugin-bundle-packaging-lifecycle/&via=dkhaywood&hashtags=maven,java,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2008/07/21/maven-bundle-plugin-bundle-packaging-lifecycle/">Google+</a></li>
         </ul>
 
     </div>
