@@ -7,7 +7,7 @@ layout: default
 
     <article class="module color-3 post">
 
-        <div>
+        <div class="navigation">
         {% if page.previous %} 
           <span class="previous-link">
             <i class="fa fa-step-backward"></i>
@@ -28,7 +28,9 @@ layout: default
         <hr>
 
 
+        <div class="content">
         {{ content }}
+        </div>
 
         <span class="date">{{ page.date | date: '%B %d, %Y'}}</span>
         <span class="category">{% for tag in page.tags %} {{ tag }} {% endfor %}</span>

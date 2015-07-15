@@ -6,9 +6,12 @@ layout: post
 slug: maven-bundle-plugin-bundle-packaging-lifecycle
 title: maven-bundle-plugin bundle packaging lifecycle
 wordpress_id: 22
+tags:
+- maven
+- java
 ---
 
-In Maven the  element in the pom.xml corresponds to a lifecycle to use to build the code.  The lifecycle in turn comprises a number of phases, each of which is bound to goals provided by plugins.  (NB: since this is a 1:1 relationship we can use packaging and lifecycle interchangeably).  
+In Maven the  element in the `pom.xml` corresponds to a lifecycle to use to build the code.  The lifecycle in turn comprises a number of phases, each of which is bound to goals provided by plugins.  (NB: since this is a 1:1 relationship we can use packaging and lifecycle interchangeably).  
   
 The Maven defaults for lifecycles, phases and phase-to-goal bindings are in a file called component.xml.  For Maven 2.0.x this lives [here](http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-core/src/main/resources/META-INF/plexus/components.xml).  
   

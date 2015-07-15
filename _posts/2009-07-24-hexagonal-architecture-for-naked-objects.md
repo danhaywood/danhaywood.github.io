@@ -11,7 +11,9 @@ tags:
 - domain driven design
 ---
 
-[![](http://farm3.static.flickr.com/2459/3835391872_f76fe1367b_m.jpg)](http://www.flickr.com/photos/danhaywood/3835391872/)I'm currently busily working through the detailed and helpful (I have to say that, but it's true!) comments that my technical reviewers have given me on the book.  One thing that several reviewers mentioned was the lack of some sort of overall architecture to help understand what Naked Objects actually is.
+[![](http://farm3.static.flickr.com/2459/3835391872_f76fe1367b_m.jpg)](http://www.flickr.com/photos/danhaywood/3835391872/){: .float-right}
+
+I'm currently busily working through the detailed and helpful (I have to say that, but it's true!) comments that my technical reviewers have given me on the book.  One thing that several reviewers mentioned was the lack of some sort of overall architecture to help understand what Naked Objects actually is.
 
 
 

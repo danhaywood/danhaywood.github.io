@@ -6,20 +6,23 @@ layout: post
 slug: collectionutils-transformedcollection-subtlety-or-bug
 title: 'CollectionUtils.transformedCollection(...) : subtlety or bug?'
 wordpress_id: 26
+tags:
+- java
 ---
 
 I've been tidying up some of the Naked Objects handling of collection recently, and thought it made sense to use other people's good work.  Since the Apache Commons Collections has been around for donkey's years, seemed like a sensible enough dependency to introduce.
 
-Now in Naked Objects we wrap every pojo with an implementation of the NakedObject interface, which keeps track of various admin info such as an OID (object identifier), whether the object is fully resolved, and optimistic locking.  So switching from underlying pojo to wrapping NakedObject is quite common.
+Now in Naked Objects we wrap every pojo with an implementation of the `NakedObject` interface, which keeps track of various admin info such as an OID (object identifier), whether the object is fully resolved, and optimistic locking.  So switching from underlying pojo to wrapping NakedObject is quite common.
 
-I wrote a little Transformer implementation called ObjectToNakedObjectTransformer, the idea then being to use transform a collection of pojos into a collection of NakedObjects:
+I wrote a little `Transformer` implementation called `ObjectToNakedObjectTransformer`, the idea then being to use transform a collection of pojos into a collection of `NakedObject`s:
 
     
-    
-    Collection nakedObject =
-      CollectionUtils.transformedCollection(
+{% highlight java %}    
+Collection nakedObject =
+    CollectionUtils.transformedCollection(
         collectionOfPojos,
         new ObjectToNakedObjectTransformer());
+{% endhighlight %}    
     
 
 
@@ -31,13 +34,13 @@ And the right way?
 
     
     
-    Collection nakedObject =
-      CollectionUtils.collect(
+{% highlight java %}    
+Collection nakedObject =
+    CollectionUtils.collect(
         collectionOfPojos,
         new ObjectToNakedObjectTransformer());
-    
+{% endhighlight %}    
 
 
 Even then though I don't like the implementation; it eagerly does the transformation rather than on a just-in-time fashion.  I ended up not using it in the end.
 
-Let me know what you think.

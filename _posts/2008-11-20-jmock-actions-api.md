@@ -123,4 +123,4 @@ Seems to work well for me, and a nice example I think of one of the lesser known
 
 
 
-returned an reference of type Injectable.  As it is, the use of method("injectInto") is a little fragile if I were to refactor the name.
+returned a reference of type Injectable.  As it is, the use of method("injectInto") is a little fragile if I were to refactor the name.
