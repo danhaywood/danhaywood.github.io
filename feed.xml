@@ -7,6 +7,17 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Jekyll, github and asciidoc - oh my!</title>
+                <dc:creator></dc:creator>
+                
+                    <description>Having used Wordpress to host my blog for the last few years, I thought it was time to get in with the cool kids and instead host my blog on github pages, using Jekyll.</description>
+                
+                            <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
+                <link>/2015/07/15/jekyll-github-asciidoc-oh-my/</link>
+                <guid isPermaLink="true">/2015/07/15/jekyll-github-asciidoc-oh-my/</guid>
+            </item>
+        
+            <item>
                 <title>An adapter to use Hamcrest matchers as AssertJ conditions</title>
                 <dc:creator></dc:creator>
                 
@@ -70,6 +81,19 @@
             </item>
         
             <item>
+                <title>Configuring Apache Isis command profiling and auditing module add-ons</title>
+                <dc:creator></dc:creator>
+                
+                    <description>When v1.6 of Apache Isis was released a month or two back we also announced the creation of a new “add-ons” website as a place to hold reusable module of code for any Apache Isis app.
+
+</description>
+                
+                            <pubDate>Thu, 25 Sep 2014 08:30:53 +0000</pubDate>
+                <link>/2014/09/25/configuring-apache-isis-command-profiling-and-auditing-module-add-ons/</link>
+                <guid isPermaLink="true">/2014/09/25/configuring-apache-isis-command-profiling-and-auditing-module-add-ons/</guid>
+            </item>
+        
+            <item>
                 <title>[ANN] Apache Isis version 1.6.0 Released</title>
                 <dc:creator></dc:creator>
                 
@@ -94,7 +118,7 @@
             </item>
         
             <item>
-                <title>Isis 1.4.0 released</title>
+                <title>Apache Isis 1.4.0 released</title>
                 <dc:creator></dc:creator>
                 
                     <description>After 4 months development, we’ve just released Apache Isis 1.4.0, and supporting components.
@@ -104,30 +128,6 @@
                             <pubDate>Fri, 14 Mar 2014 19:07:33 +0000</pubDate>
                 <link>/2014/03/14/isis-1-4-0-released/</link>
                 <guid isPermaLink="true">/2014/03/14/isis-1-4-0-released/</guid>
-            </item>
-        
-            <item>
-                <title>Isis 1.3.0 - crammed full of goodies!</title>
-                <dc:creator></dc:creator>
-                
-                    <description>Over on Apache Isis, we’ve just released a new version, 1.3.0, of the framework (core plus supporting components).
-
-</description>
-                
-                            <pubDate>Fri, 25 Oct 2013 18:00:45 +0000</pubDate>
-                <link>/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</link>
-                <guid isPermaLink="true">/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</guid>
-            </item>
-        
-            <item>
-                <title>Welcoming Oscar Bou as a new committer to Apache Isis</title>
-                <dc:creator></dc:creator>
-                
-                    <description>I’m delighted to announce that Oscar Bou has been voted in as a committer on Apache Isis, and also to as a member of the Isis PMC. The first gives Oscar the right to commit changes directly to Isis’ codebase, the second gives him the right to be i...</description>
-                
-                            <pubDate>Mon, 12 Aug 2013 10:07:16 +0000</pubDate>
-                <link>/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</link>
-                <guid isPermaLink="true">/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</guid>
             </item>
         
     </channel>

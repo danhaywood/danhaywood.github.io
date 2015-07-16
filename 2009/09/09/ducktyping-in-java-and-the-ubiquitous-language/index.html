@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+         DuckTyping in Java (and the Ubiquitous Language)
+        
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="/css/main.css" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Dan Haywood" href="/feed.xml">
+
+    <link href="/css/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="top" class="main-header">
+            
+        <div class="module title color-1" >
+            <h1>
+                <a href="/">
+                    <div>
+                        <span>Dan Haywood</span>
+                    </div>
+                </a>
+            </h1>
+        </div>
+
+        <div class="module description color-3">
+            domain driven design, apache&nbsp;isis, restful&nbsp;objects, naked&nbsp;objects, agile, tdd
+        </div>
+
+        <div class="module links color-4">
+            <span class="gravatar">
+                <img src="/images/DanHaywood-2011-280x240.jpg" width="92px"/>
+            </span>
+            <div class="profiles">
+                <a href="https://github.com/danhaywood" title="Github profile" target="_blank">github</a>
+                <a href="https://www.youtube.com/user//TheDanHaywood" title="Youtube channel" target="_blank">Youtube</a>
+                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/dkhaywood" title="Twitter posts" target="_blank">twitter</a>
+                <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
+                <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+            </div>
+        </div>
+
+        <div class="module tags color-2">
+            <div>
+                
+                
+                    <span style="font-size: 115%">
+                    <a href="/tags/announce/">
+                        announce
+                    </a></span>
+                    <span style="font-size: 140%">
+                    <a href="/tags/apache-isis/">
+                        apache-isis
+                    </a></span>
+                    <span style="font-size: 75%">
+                    <a href="/tags/apache-shiro/">
+                        apache-shiro
+                    </a></span>
+                    <span style="font-size: 80%">
+                    <a href="/tags/apache-wicket/">
+                        apache-wicket
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/asciidoc/">
+                        asciidoc
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/asf/">
+                        asf
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/assertj/">
+                        assertj
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/bootstrap/">
+                        bootstrap
+                    </a></span>
+                    <span style="font-size: 75%">
+                    <a href="/tags/committer/">
+                        committer
+                    </a></span>
+                    <span style="font-size: 80%">
+                    <a href="/tags/ddd/">
+                        ddd
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/eclipse/">
+                        eclipse
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/github/">
+                        github
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/gmap3/">
+                        gmap3
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/guava/">
+                        guava
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/hamcrest/">
+                        hamcrest
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/how-to/">
+                        how-to
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/i18n/">
+                        i18n
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/intellij/">
+                        intellij
+                    </a></span>
+                    <span style="font-size: 85%">
+                    <a href="/tags/isisaddons/">
+                        isisaddons
+                    </a></span>
+                    <span style="font-size: 125%">
+                    <a href="/tags/java/">
+                        java
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/jekyll/">
+                        jekyll
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/jmock/">
+                        jmock
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/jrebel/">
+                        jrebel
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/junit/">
+                        junit
+                    </a></span>
+                    <span style="font-size: 75%">
+                    <a href="/tags/maven/">
+                        maven
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/naked-objects/">
+                        naked-objects
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/neo4j/">
+                        neo4j
+                    </a></span>
+                    <span style="font-size: 75%">
+                    <a href="/tags/restful-objects/">
+                        restful-objects
+                    </a></span>
+                    <span style="font-size: 65%">
+                    <a href="/tags/screencast/">
+                        screencast
+                    </a></span>
+                    <span style="font-size: 75%">
+                    <a href="/tags/tdd/">
+                        tdd
+                    </a></span>
+            </div>
+        </div>
+
+        <div class="footer module">
+    <span class="licence">Copyright 2015 &copy; Dan Haywood</span>
+<!--
+    <p>
+        Credits: <a href="http://jekyllrb.com/" target="_blank">Jekyllrb</a>, <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block theme</a> and others.
+    </p>
+-->
+</div>
+
+    </header>
+
+    <div class="main-content">
+
+
+    <article class="module color-3 post">
+
+        <div class="navigation">
+         
+          <span class="previous-link">
+            <i class="fa fa-step-backward"></i>
+            <a rel="prev" href="/2009/08/20/exploring-domains-and-collaborating-with-domain-experts/">Previous</a>
+          </span>
+        
+         
+          <span class="next-link" style="float:right;">
+            <a rel="next" href="/2009/10/11/converting-eclipse-templates-to-intellij-idea/">Next</a>
+            <i class="fa fa-step-forward"></i>
+          </span>
+        
+        </div>
+
+        <h1>DuckTyping in Java (and the Ubiquitous Language)</h1>
+
+
+        <hr>
+
+
+        <div class="content">
+        <p><a href="http://www.flickr.com/photos/troikkonen/501334109/"><img src="http://farm1.static.flickr.com/221/501334109_72733521d5.jpg" alt="Ducks in a row..." /></a></p>
+
+<p>I’ve recently discovered <a href="http://javaposse.com">javaposse.com</a> (recommended), and was listening to an <a href="http://javaposse.com/index.php?post_id=401248">podcast from last year</a> on the <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY principle</a>.</p>
+
+<p>One of the questions asked was: when coding in Java, where do we have to repeat ourselves?  There was the usual point made about generics being overly verbose (Java 7’s <a href="http://mail.openjdk.java.net/pipermail/coin-dev/2009-February/000009.html">diamond operator</a> will help), but another answer came back about the repetition required in having to explicitly say that a class implemented an interface in addition to just providing an implementation of all the methods in that interface… in other words, why can’t Java support <a href="http://en.wikipedia.org/wiki/Duck_typing">duck typing</a>:</p>
+
+<p>So, suppose:</p>
+
+<pre><code>public interface IDuck {
+    public void quack(int volume);
+    public void float();
+}
+</code></pre>
+
+<p>and</p>
+
+<pre><code>public class DuckLike {
+    public void quack(int volume) {  .... }
+    public void float() { }
+}
+</code></pre>
+
+<p>What our speaker wanted was to be able to pass a DuckLike object around to something that would use <code>IDuck</code>s, without having to say “class DuckLike implements IDuck”:</p>
+
+<pre><code>public class DuckUser {
+    public void useDuck(Object o) {
+        ... use the supplied object as a duck if it quacks and floats ...
+    }
+}
+</code></pre>
+
+<p>In order to support ducktyping, note that the <code>DuckUser#useDuck(...) takes an </code>Object<code>, not an </code>IDuck`.</p>
+
+<p>So, one solution that came back was a utility to automatically provide a proxy for the duckLike thing that implements IDuck if it does indeed have a suitable implementation.  This proxy then delegates to the underlying duckLike.  I must admit this caught my fancy so I thought I’d have a go at writing it.</p>
+
+<p>So, given an instance of <code>DuckLike</code> and the <code>IDuck</code>, you can write:</p>
+
+<pre><code>DuckLike duckLike = new DuckLike();
+IDuck duck = DuckTyping.quacks(duckLike, IDuck.class);
+if (duck != null) {
+    ... use duckLike as a duck ...
+}
+</code></pre>
+
+<p>Turns out that the utility class, <code>DuckTyping</code>, isn’t that difficult to write (ie it’s taking me longer to write the blog than the code did…):</p>
+
+<pre><code>package com.danhaywood.misc.duck;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class DuckTyping {
+    @SuppressWarnings("unchecked")
+    public static T like(final Object duckLike, Class requiredClass) {
+        final Class duckLikeClass = duckLike.getClass();
+        if (requiredClass.isAssignableFrom(duckLikeClass)) {
+            return (T) duckLike;
+        }
+        for (Method method : requiredClass.getMethods()) {
+            try {
+                duckLikeClass.getMethod(method.getName(), method
+                        .getParameterTypes());
+            } catch (NoSuchMethodException e) {
+                return null;
+            }
+        }
+        InvocationHandler handler = new InvocationHandler() {
+            public Object invoke(Object proxy, Method method, Object[] args)
+                    throws Throwable {
+                Method duckLikeMethod = duckLikeClass.getMethod(method
+                        .getName(), method.getParameterTypes());
+                return duckLikeMethod.invoke(duckLike, args);
+            }
+        };
+        return (T) Proxy.newProxyInstance(
+                requiredClass.getClassLoader(),
+                new Class[] { requiredClass },
+                handler);
+    }
+}
+</code></pre>
+
+<p>We can then updated our <code>DuckUser</code> library to use the new utility:</p>
+
+<pre><code>public class DuckUser {
+    public void useDuck(Object o) {
+        IDuck duck = DuckTyping.like(o, IDuck.class);
+        if (duck != null) {
+            ... use supplied object as a duck ...
+        }
+    }
+}
+</code></pre>
+
+<p>How cool is that?</p>
+
+<p>Actually, I’m not sure that it’s very cool at all.</p>
+
+<p>Let’s think about the ubiquitous language of this little example.  Okay, so we’ve made it possible to pass arbitrary objects to <code>DuckUser</code>, and if that object quacks like a duck and floats like a duck then the <code>DuckUser</code> will be able to use it as an (I)Duck.  However, the concept of duckiness is now hidden within <code>DuckUser</code>.  Does this represent good encapsulation?  No, I think it means that our ubiquitous langauge is missing a concept, we haven’t surfaced the concept of duckiness, and so we can’t talk about ducks.</p>
+
+<p>So, hey, make the object implement the interface.  We’re not violating the DRY principle when we implement an interface; we’re expressing syntactically that we intend to comply with the semantics of the concept represented by an interface (as opposed to just accidentally having some methods that are the same signature).</p>
+
+<p>Interfaces are a key part of defining the ubiquitous language.  Very often we start off defining the obvious, concrete classes.  Only later on, with deeper understanding, do the roles that objects play to each other start to appear … it’s these roles that define the <a href="http://domaindrivendesign.org/node/97">conceptual contours</a> of the model.</p>
+
+<p>So, yes, the above <code>DuckTyping</code> utility was fun to write.  But I don’t think I’ll be using it in my domain models.</p>
+
+        </div>
+
+        <span class="date">September 09, 2009</span>
+        <span class="category"> ddd </span>
+
+
+    </article>
+
+
+    <div class="social module color-4">
+        <ul>
+
+            
+
+            
+
+            
+            
+                
+            
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=DuckTyping in Java (and the Ubiquitous Language)&u=/2009/09/09/ducktyping-in-java-and-the-ubiquitous-language/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=DuckTyping in Java (and the Ubiquitous Language)&url=/2009/09/09/ducktyping-in-java-and-the-ubiquitous-language/&via=dkhaywood&hashtags=ddd,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2009/09/09/ducktyping-in-java-and-the-ubiquitous-language/">Google+</a></li>
+        </ul>
+
+    </div>
+
+    
+
+<div class="module color-3">
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'danhaywood';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>
