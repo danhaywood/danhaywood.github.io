@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://www.danhaywood.com/</loc>
+    </url>
+
+<url>
+    <loc>http://www.danhaywood.com/2015/07/15/jekyll-github-asciidoc-oh-my/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2015/04/18/an-adapter-to-use-hamcrest-matchers-as-assertj-conditions/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2015/04/17/converting-from-hamcrest-to-assertj/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2015/02/24/ann-apache-isis-version-1-8-0-released/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/12/04/welcoming-martin-grigorov-as-a-new-committer-on-apache-isis/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/10/21/ann-apache-isis-version-1-7-0-released/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/09/25/configuring-apache-isis-command-profiling-and-auditing-module-add-ons/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/07/28/ann-apache-isis-version-1-6-0-released/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/06/07/ann-apache-isis-version-1-5-0-and-related-components-released/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2014/03/14/isis-1-4-0-released/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/04/26/welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/02/07/release-of-apache-isis-core-1-2-0-and-components/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/02/07/apache-isis-core-1-1-0-isis-shiro-security-1-1-0-isis-wicket-viewer-1-1-0/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/01/24/apache-isis-release-v1-0-0/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2009/10/11/converting-eclipse-templates-to-intellij-idea/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2009/09/09/ducktyping-in-java-and-the-ubiquitous-language/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2009/08/20/exploring-domains-and-collaborating-with-domain-experts/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2009/08/18/see-it-use-it-do-it/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2009/07/24/hexagonal-architecture-for-naked-objects/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2008/11/27/interface-segregation-principle/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2008/11/20/jmock-actions-api/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2008/08/11/collectionutils-transformedcollection-subtlety-or-bug/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2008/07/21/maven-bundle-plugin-bundle-packaging-lifecycle/</loc>
+</url>
+
+
+
+
+
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/tdd/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/screencast/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/restful-objects/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/neo4j/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/naked-objects/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/maven/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/junit/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/jrebel/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/jmock/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/jekyll/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/java/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/isisaddons/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/intellij/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/i18n/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/how-to/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/hamcrest/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/guava/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/gmap3/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/github/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/eclipse/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/ddd/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/committer/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/bootstrap/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/assertj/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/asf/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/asciidoc/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/apache-wicket/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/apache-shiro/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/apache-isis/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/announce/</loc>
+</url>
+
+
+
+
+
+
+
+
+
+
+</urlset>
