@@ -1,14 +1,14 @@
 ---
+title: '[ANN] Apache Isis version 1.7.0 Released'
+slug: ann-apache-isis-version-1-7-0-released
 author: danhaywood
 comments: true
 date: 2014-10-21 06:20:34+00:00
 layout: post
-slug: ann-apache-isis-version-1-7-0-released
-title: '[ANN] Apache Isis version 1.7.0 Released'
 wordpress_id: 1315
 tags:
 - announce
-- isis
+- apache-isis
 - isisaddons
 - java
 ---

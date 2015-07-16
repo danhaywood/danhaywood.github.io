@@ -6,12 +6,12 @@ layout: post
 slug: see-it-use-it-do-it
 title: See It, Use It, Do It
 wordpress_id: 137
+excerpt: The Naked Objects programming model is designed to allow us to write behaviourally complete objects, ones that have a full set of responsibilities.  Part and parcel of these responsibilities is in enforcing preconditions for interacting with the object, (that is, invoking an actions, changing a property or adding to/removing from a collection).
 tags:
-- naked objects
+- naked-objects
 ---
 
 ![Three Wise Monkeys](http://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Three_wise_monkeys_figure.JPG/300px-Three_wise_monkeys_figure.JPG){: .float-right}
-
 
 The Naked Objects programming model is designed to allow us to write behaviourally complete objects, ones that have a full set of responsibilities rather than being [anaemic](http://en.wikipedia.org/wiki/Anemic_Domain_Model).
 

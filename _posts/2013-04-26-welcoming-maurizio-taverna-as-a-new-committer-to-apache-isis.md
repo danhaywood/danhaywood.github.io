@@ -7,7 +7,7 @@ slug: welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis
 title: Welcoming Maurizio Taverna as a new committer to Apache Isis
 wordpress_id: 1142
 tags:
-- isis
+- apache-isis
 - committer
 - java
 ---

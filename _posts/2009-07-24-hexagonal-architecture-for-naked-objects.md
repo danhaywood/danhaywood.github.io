@@ -6,9 +6,10 @@ layout: post
 slug: hexagonal-architecture-for-naked-objects
 title: Hexagonal Architecture for Naked Objects
 wordpress_id: 92
+excerpt: A view of the hexagonal architecture, taken from my DDD book.
 tags:
-- apache isis
-- domain driven design
+- apache-isis
+- ddd
 ---
 
 [![](http://farm3.static.flickr.com/2459/3835391872_f76fe1367b_m.jpg)](http://www.flickr.com/photos/danhaywood/3835391872/){: .float-right}

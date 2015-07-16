@@ -7,7 +7,7 @@ slug: converting-from-hamcrest-to-assertj
 title: Converting from Hamcrest to AssertJ
 wordpress_id: 1322
 tags:
-- isis
+- apache-isis
 - assertj
 - hamcrest
 - isisaddons

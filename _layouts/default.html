@@ -43,14 +43,6 @@
             {{ site.description }}
         </div>
 
-        <!--
-        <nav class="module main-menu color-4">
-            <a href="{{ site.url }}/">Home</a>
-            <a href="{{ site.url }}/about/">About</a>
-            <a href="{{ site.url }}/contact/">Contact</a>
-        </nav>
-        -->
-
         <div class="module links color-4">
             <span class="gravatar">
                 <img src="{{ site.url }}/images/DanHaywood-2011-280x240.jpg" width="92px"/>
@@ -63,14 +55,25 @@
                 <a href="https://plus.google.com/{{ site.google }}" title="Profile in Google+" target="_blank">Google+</a>
                 <a href="{{ site.url }}/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
             </div>
-            
         </div>
+
+        <div class="module tags color-2">
+            <div>
+                {% assign sorted_tags = (site.tags| sort: tag ) %}
+                {% for tag in sorted_tags %}
+                    <span style="font-size: {{ tag | last | size | times: 150 | divided_by: site.tags.size | plus: 60  }}%">
+                    <a href="/tags/{{ tag | first | slugize }}/">
+                        {{ tag | first }}
+                    </a></span>{% endfor %}
+            </div>
+        </div>
+
+        {% include footer.html %}
 
     </header>
 
     {{ content }}
 
-    {% include footer.html %}
 
 </body>
 </html>

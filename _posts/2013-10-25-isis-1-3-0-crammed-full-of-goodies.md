@@ -1,16 +1,17 @@
 ---
+title: Apache Isis 1.3.0 - crammed full of goodies!
 author: danhaywood
 comments: true
 date: 2013-10-25 18:00:45+00:00
 layout: post
 slug: isis-1-3-0-crammed-full-of-goodies
-title: Isis 1.3.0 - crammed full of goodies!
 wordpress_id: 1213
 tags:
 - announce
-- isis
-- restful
+- apache-isis
+- restful-objects
 ---
+
 
 Over on [Apache Isis](http://isis.apache.org), we've just released a new version, 1.3.0, of the framework (core plus supporting components).
 

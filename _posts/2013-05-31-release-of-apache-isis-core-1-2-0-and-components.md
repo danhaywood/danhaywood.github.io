@@ -1,16 +1,16 @@
 ---
+title: "[ANN] Release of Apache Isis Core 1.2.0 and components"
+slug: ann-release-of-apache-isis-core-1-2-0-and-components
 author: danhaywood
 comments: true
 date: 2013-02-07 15:14:32+00:00
 layout: post
-slug: ann-release-of-apache-isis-core-1-2-0-and-components
-title: "[ANN] Release of Apache Isis Core 1.2.0 and components"
 wordpress_id: 1096
 tags:
 - announce
-- isis
-- shiro
-- wicket
+- apache-isis
+- apache-shiro
+- apache-wicket
 - java
 - maven
 ---

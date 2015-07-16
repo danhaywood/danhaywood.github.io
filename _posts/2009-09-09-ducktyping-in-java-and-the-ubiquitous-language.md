@@ -6,8 +6,9 @@ layout: post
 slug: ducktyping-in-java-and-the-ubiquitous-language
 title: DuckTyping in Java (and the Ubiquitous Language)
 wordpress_id: 215
+excerpt: A utility for implementing duck typing in Java, and why you probably shouldn't use it.
 tags:
-- domain driven design
+- ddd
 ---
 
 [![Ducks in a row...](http://farm1.static.flickr.com/221/501334109_72733521d5.jpg)](http://www.flickr.com/photos/troikkonen/501334109/)
@@ -34,7 +35,7 @@ and
     }
 
 
-What our speaker wanted was to be able to pass a DuckLike object around to something that would use IDucks, without having to say class DuckLike implements IDuck:
+What our speaker wanted was to be able to pass a DuckLike object around to something that would use `IDuck`s, without having to say "class DuckLike implements IDuck":
 
     
     public class DuckUser {
@@ -44,12 +45,11 @@ What our speaker wanted was to be able to pass a DuckLike object around to somet
     }
 
 
-In order to support ducktyping, note that the DuckUser#useDuck takes an Object, not an IDuck.
+In order to support ducktyping, note that the `DuckUser#useDuck(...) takes an `Object`, not an `IDuck`.
 
 So, one solution that came back was a utility to automatically provide a proxy for the duckLike thing that implements IDuck if it does indeed have a suitable implementation.  This proxy then delegates to the underlying duckLike.  I must admit this caught my fancy so I thought I'd have a go at writing it.
-<!-- more -->
 
-So, given an instance of DuckLike and the IDuck, you can write:
+So, given an instance of `DuckLike` and the `IDuck`, you can write:
 
     
     DuckLike duckLike = new DuckLike();
@@ -59,10 +59,10 @@ So, given an instance of DuckLike and the IDuck, you can write:
     }
 
 
-Turns out that the utility class, DuckTyping, isn't that difficult to write (ie it's taking me longer to write the blog than the code did...):
+Turns out that the utility class, `DuckTyping`, isn't that difficult to write (ie it's taking me longer to write the blog than the code did...):
 
     
-    package org.starobjects.misc.duck;
+    package com.danhaywood.misc.duck;
     
     import java.lang.reflect.InvocationHandler;
     import java.lang.reflect.Method;
@@ -70,7 +70,7 @@ Turns out that the utility class, DuckTyping, isn't that difficult to write (ie 
     
     public class DuckTyping {
         @SuppressWarnings("unchecked")
-        public static  T quacks(final Object duckLike, Class requiredClass) {
+        public static T like(final Object duckLike, Class requiredClass) {
             final Class duckLikeClass = duckLike.getClass();
             if (requiredClass.isAssignableFrom(duckLikeClass)) {
                 return (T) duckLike;
@@ -99,12 +99,12 @@ Turns out that the utility class, DuckTyping, isn't that difficult to write (ie 
     }
 
 
-We can then updated our DuckUser library to use the new utility:
+We can then updated our `DuckUser` library to use the new utility:
 
     
     public class DuckUser {
         public void useDuck(Object o) {
-            IDuck duck = DuckTyping.quacks(o, IDuck.class);
+            IDuck duck = DuckTyping.like(o, IDuck.class);
             if (duck != null) {
                 ... use supplied object as a duck ...
             }
@@ -116,10 +116,10 @@ How cool is that?
 
 Actually, I'm not sure that it's very cool at all.
 
-Let's think about the ubiquitous language of this little example.  Okay, so we've made it possible to pass arbitrary objects to DuckUser, and if that object quacks like a duck and floats like a duck then the DuckUser will be able to use it as an (I)Duck.  However, the concept of duckiness is now hidden within DuckUser.  Does this represent good encapsulation?  No, I think it means that in the ubiquitous langauge is missing a concept, we haven't surfaced the concept of duckiness, and so we can't talk about ducks.
+Let's think about the ubiquitous language of this little example.  Okay, so we've made it possible to pass arbitrary objects to `DuckUser`, and if that object quacks like a duck and floats like a duck then the `DuckUser` will be able to use it as an (I)Duck.  However, the concept of duckiness is now hidden within `DuckUser`.  Does this represent good encapsulation?  No, I think it means that our ubiquitous langauge is missing a concept, we haven't surfaced the concept of duckiness, and so we can't talk about ducks.
 
 So, hey, make the object implement the interface.  We're not violating the DRY principle when we implement an interface; we're expressing syntactically that we intend to comply with the semantics of the concept represented by an interface (as opposed to just accidentally having some methods that are the same signature).
 
 Interfaces are a key part of defining the ubiquitous language.  Very often we start off defining the obvious, concrete classes.  Only later on, with deeper understanding, do the roles that objects play to each other start to appear ... it's these roles that define the [conceptual contours](http://domaindrivendesign.org/node/97) of the model.
 
-So, yes, the above DuckTyping utility was fun to write (and you can pull it down from [Sourceforge](https://miscobjects.svn.sourceforge.net/svnroot/miscobjects/trunk/quack) if you want).  But I don't think I'll be using it in my domain models.
+So, yes, the above `DuckTyping` utility was fun to write.  But I don't think I'll be using it in my domain models.

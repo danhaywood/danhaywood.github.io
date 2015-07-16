@@ -41,7 +41,7 @@ a {
 
 p
 { 
-    line-height: 1.8em;
+    line-height: 1.4em;
 }
 
 li 
@@ -50,7 +50,7 @@ li
 }
 li p
 {
-    line-height: 1.4em;
+    line-height: 1.0em;
 }
 
 .top { text-align: right; }
@@ -117,6 +117,8 @@ article .content p a:active {
 
 .main-header a {
     color: #f5f5f5;
+}
+.main-header .title a {
     text-transform: uppercase;
 }
 
@@ -174,9 +176,11 @@ article .content p a:active {
 
 .main-content .content a {
     color: #2c3e50;
-    background-color: #dee;
+    background-color: #eaeaea;
+    /*text-decoration: underline;*/
 }
 .main-content .content  a:hover, .main-content .content  a:focus { color: #2980b9; }
+
 
 
 .category {
@@ -188,6 +192,21 @@ article .content p a:active {
 .main-content .post .category {
     top: inherit;
     bottom: 0.75em;
+}
+.main-content .category a {
+    color: rgb(204,204,204);
+}
+.main-content .category a:hover {
+    color: #222;
+    text-decoration: underline;
+}
+.main-content h2 a:hover  {
+    color: #888;
+    text-decoration: underline;
+    -webkit-transition: color 0.25s ease-in, background 0.25s ease-in;
+    -moz-transition: color 0.25s ease-in, background 0.25s ease-in;
+    -o-transition: color 0.25s ease-in, background 0.25s ease-in;
+    transition: color 0.25s ease-in, background 0.25s ease-in;
 }
 
 .date {
@@ -282,11 +301,17 @@ blockquote {
 
 
 .color-2 a {
-    color: #212121;
+    color: #989898;
 }
 
-.color-2 a:hover, .color-2 a:active {
-    color: #212121;
+.color-2 a:hover,
+.color-2 a:active {
+    color: #bababa;
+    text-decoration: underline;
+}
+
+.posts-by-tag a:hover{
+    text-decoration: underline;
 }
 
 .links a {
@@ -414,6 +439,10 @@ table {
     .main-header .gravatar { display: none; }
 
     a.float-right img {
+        display: none;
+    }
+    .main-header .description,
+    .main-header .tags {
         display: none;
     }
 }

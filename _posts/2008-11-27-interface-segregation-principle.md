@@ -6,8 +6,9 @@ layout: post
 slug: interface-segregation-principle
 title: Interface Segregation Principle
 wordpress_id: 31
+excerpt: "What techniques do you use to identify implicit concepts when modelling systems?" 
 tags:
-- domain driven design
+- ddd
 ---
 
 [![collander](http://farm1.static.flickr.com/215/463245164_ec0255a18c.jpg)](http://www.flickr.com/photos/karlajdee/463245164/){: .float-right}

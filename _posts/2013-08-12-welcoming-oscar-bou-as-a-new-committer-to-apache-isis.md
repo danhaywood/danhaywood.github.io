@@ -8,7 +8,7 @@ title: Welcoming Oscar Bou as a new committer to Apache Isis
 wordpress_id: 1200
 tags:
 - announce
-- isis
+- apache-isis
 - committer
 ---
 

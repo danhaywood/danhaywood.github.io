@@ -1,0 +1,52 @@
+---
+tags:
+- github
+- jekyll
+- asciidoc
+excerpt: Having used Wordpress to host my blog for the last few years, I thought it was time to get in with the cool kids and instead host my blog on github pages, using Jekyll.
+---
+:title: Jekyll, github and asciidoc - oh my!
+:slug: jekyll-github-asciidoc-oh-my
+:author: danhaywood
+:comments: true
+:date: 2015-07-15 08:10
+:layout: post
+
+
+Having used Wordpress to host my blog for the last few years, I thought it was time to get in with the cool kids and instead host my blog on github pages, using Jekyll.  As well as more control over its styling, using Jekyll also allows me to write and preview blog posts offline, and publish with simply a `git push`.
+
+I've also been reworking the link:http://isis.apache.org[Apache Isis] documentation to Asciidoc (from a mix of Markdown and HTML), and wanted to be able to write blog posts in Asciidoc too.  That introduces a slight issue: (at the time of writing at least) github doesn't natively support Asciidoc.  Thus, I need to use a CI job to convert the Asciidoc into vanilla .html, and then push to github.
+
+Luckily there are others who have gone before me, and so with thanks to link:http://thepaulrayner.com/blog/2015/01/05/jekyll-asciidoc-gem-published/[Paul Rayner], link:http://eshepelyuk.github.io/2014/11/06/advanced-jekyll-and-asciidoctor.html[eshepelyuk] and link:http://github.com/johncarl81[John Carl], this blog is now hosted on github.  A link:https://travis-ci.org/danhaywood/danhaywood.github.io[travis CI] job does the jekyll processing and pushes to github.  The only real bit of magic is to set up the authentication token so that travis has permission to perform the push.
+
+That means my workflow is now as follows:
+
+* from the command line, run jekyll: +
++
+[source,bash]
+----
+bundle exec jekyll serve
+----
+
+* open up my browser at http://localhost:4000[http://localhost:4000]
+
+* write a new Asciidoc post in `_posts` directory, and review in the browser
+
+* commit and push when happy : +
++
+[source,bash]
+----
+git commit -am "new blog post" && git push
+----
+
+With respect to the https://github.com/danhaywood/danhaywood.github.io[source of this blog's repo], a couple of points are worth further explanation:
+
+* the source Asciidoc is in the `jekyll` branch, while the published HTML is on the `master` branch +
++
+This results in a git project history of two parallel never connecting branches; but then again, this is what github's own gh-pages branches also do.  (If you didn't like this I suppose you could have two repos, one for the source Asciidoc and the other merely holding the published HTML).
+
+* the `.travis.yml` (in the `jekyll` branch) tells Travis how to execute the CI job.  Note that this references the `build.sh` file.  It also restricts travis to only process pushed to the `jekyll` branch; we don't want travis to do anything when it pushes the published HTML to the `master` branch.
+
+* The `CNAME` file tells github to map the github page to my own custom domain (danhaywood.com).
+
+Anyway, if this approach to maintaining a blog appeals, then feel free to copy and adapt for yourself.

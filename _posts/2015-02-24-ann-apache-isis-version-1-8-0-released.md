@@ -8,7 +8,7 @@ title: '[ANN] Apache Isis version 1.8.0 released'
 wordpress_id: 1314
 tags:
 - announce
-- isis
+- apache-isis
 - bootstrap
 - i18n
 - isisaddons

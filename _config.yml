@@ -5,8 +5,6 @@ description: "domain driven design, apache&nbsp;isis, restful&nbsp;objects, nake
 
 exclude: [_README, _zzz, Gemfile.lock]
 
-#markdown: redcarpet
-#highlighter: pygments
 markdown: kramdown
 highlighter: coderay
 

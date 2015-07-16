@@ -1,19 +1,19 @@
 ---
+title: '[ANN] Apache Isis version 1.5.0 and related components Released'
+slug: ann-apache-isis-version-1-5-0-and-related-components-released
 author: danhaywood
 comments: true
 date: 2014-06-07 18:21:32+00:00
 layout: post
-slug: ann-apache-isis-version-1-5-0-and-related-components-released
-title: '[ANN] Apache Isis version 1.5.0 and related components Released'
 wordpress_id: 1297
 tags:
 - announce
-- isis
+- apache-isis
 - java
 - jrebel
 - maven
-- restful
-- shiro
+- restful-objects
+- apache-shiro
 ---
 
 The Isis team is pleased to announce the release of:

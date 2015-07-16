@@ -1,0 +1,8 @@
+---
+layout: tag
+tag: naked-objects
+---
+:title: Naked Objects
+
+
+

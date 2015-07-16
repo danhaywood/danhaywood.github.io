@@ -1,16 +1,16 @@
 ---
+title: Apache Isis 1.4.0 released
+slug: isis-1-4-0-released
 author: danhaywood
 comments: true
 date: 2014-03-14 19:07:33+00:00
 layout: post
-slug: isis-1-4-0-released
-title: Isis 1.4.0 released
 wordpress_id: 1236
 tags:
 - announce
-- isis
-- restful
-- wicket
+- apache-isis
+- restful-objects
+- apache-wicket
 ---
 
 After 4 months development, we've just released [Apache Isis](http://isis.apache.org) 1.4.0, and supporting components.

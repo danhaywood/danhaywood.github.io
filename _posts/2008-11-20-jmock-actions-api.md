@@ -7,6 +7,8 @@ slug: jmock-actions-api
 title: JMock Actions API
 wordpress_id: 30
 tags:
+- jmock
+- java
 - tdd
 ---
 

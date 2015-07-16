@@ -1,0 +1,8 @@
+---
+layout: tag
+tag: restful-objects
+---
+:title: Restful Objects
+
+
+

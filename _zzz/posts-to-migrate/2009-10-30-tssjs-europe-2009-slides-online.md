@@ -1,16 +1,16 @@
 ---
+title: TSSJS Europe 2009 Slides Online
 author: danhaywood
 comments: true
 date: 2009-10-30 20:16:55+00:00
 layout: post
 slug: tssjs-europe-2009-slides-online
-title: TSSJS Europe 2009 Slides Online
 wordpress_id: 381
 tags:
-- apache isis
+- apache-isis
 ---
 
-[![IMG_3510 Steam Train at Weybourne in motion](http://farm4.static.flickr.com/3261/2350060367_c556c15b79.jpg)](http://www.flickr.com/photos/rogerblackwell/2350060367/)
+[![IMG_3510 Steam Train at Weybourne in motion](http://farm4.static.flickr.com/3261/2350060367_c556c15b79.jpg)](http://www.flickr.com/photos/rogerblackwell/2350060367/){: .float-right }
 
 Just had an enjoyable few days at the TSS Java Symposium conference in Prague.  Never been to Prague before - like everyone told me, a very beautiful city.
 

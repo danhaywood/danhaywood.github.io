@@ -1,4 +1,6 @@
 ---
+title: '[ANN] Apache Isis version 1.6.0 Released'
+slug: ann-apache-isis-version-1-6-0-released
 author: danhaywood
 comments: true
 date: 2014-07-28 17:50:34+00:00
@@ -6,19 +8,16 @@ excerpt: Apache Isis 1.6.0 has been released, including new and improved event b
   stuff to decouple business logic within the apps, and a new companion www.isisaddons.org
   for housing third-party modules.
 layout: post
-slug: ann-apache-isis-version-1-6-0-released
-title: '[ANN] Apache Isis version 1.6.0 Released'
 wordpress_id: 1299
 tags:
 - announce
-- isis
-- eventbus
+- apache-isis
 - guava
 - isisaddons
 - java
 ---
 
-We just pushed out 1.6.0 of Isis, which now consists of:
+We just pushed out 1.6.0 of Apache Isis, which now consists of:
 
 * Apache Isis Core version 1.6.0
 * Wicket Viewer 1.6.0

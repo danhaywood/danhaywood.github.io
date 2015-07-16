@@ -9,8 +9,8 @@ title: Welcoming Martin Grigorov as a new committer on Apache Isis
 wordpress_id: 1317
 tags:
 - announce
-- isis
-- wicket
+- apache-isis
+- apache-wicket
 - asf
 - bootstrap
 - committer

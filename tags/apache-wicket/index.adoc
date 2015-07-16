@@ -1,0 +1,7 @@
+---
+layout: tag
+tag: apache-wicket
+---
+:title: Apache Wicket
+
+Invented in 2004, link:http://wicket.apache.org[Apache Wicket] is one of the few survivors of the Java serverside web framework wars of the mid 2000's.  Wicket is an open source, component oriented, serverside, Java web application framework. With a history of over a decade, it is still going strong and has a solid future ahead.

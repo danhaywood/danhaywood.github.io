@@ -1,0 +1,9 @@
+---
+layout: tag
+tag: asciidoc
+---
+:title: Asciidoc (and Asciidoctor)
+
+link:http://www.methods.co.nz/asciidoc/[AsciiDoc] is a text document format for writing notes, documentation, articles, books, ebooks, slideshows, web pages, man pages and blogs. AsciiDoc files can be translated to many formats including HTML, PDF, EPUB, man page.
+
+link:http://asciidoctor.org[Asciidoctor] is a fast text processor and publishing toolchain for converting AsciiDoc content to HTML5, DocBook 5 (or 4.5) and other formats. Asciidoctor is written in Ruby, packaged as a RubyGem and published to RubyGems.org. The gem is also included in several Linux distributions, including Fedora, Debian and Ubuntu. Asciidoctor is open source, hosted on GitHub and released under the MIT license.

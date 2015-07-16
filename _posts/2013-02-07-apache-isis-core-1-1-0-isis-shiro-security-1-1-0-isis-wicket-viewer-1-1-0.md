@@ -8,9 +8,9 @@ title: Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1
 wordpress_id: 1096
 tags:
 - announce
-- isis
-- shiro
-- wicket
+- apache-isis
+- apache-shiro
+- apache-wicket
 - gmap3
 - java
 ---
