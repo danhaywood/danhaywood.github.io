@@ -4,5 +4,6 @@ tag: jrebel
 ---
 :title: JRebel
 
+link:http://zeroturnaround.com/software/jrebel/[JRebel] is a JVM Java Agent that integrates with application servers, making classes reloadable with existing class loaders. Only changed classes are recompiled and instantly reloaded in the running application.
 
 

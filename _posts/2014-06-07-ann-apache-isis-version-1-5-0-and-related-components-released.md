@@ -9,7 +9,6 @@ wordpress_id: 1297
 tags:
 - announce
 - apache-isis
-- java
 - jrebel
 - maven
 - restful-objects

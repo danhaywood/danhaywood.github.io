@@ -4,5 +4,9 @@ tag: jekyll
 ---
 :title: Jekyll
 
+link:http://jekyllrb.com/docs/home/[Jekyll] is a simple, blog-aware, static site generator.  It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown or link:/tags/asciidoc[Asciidoc]) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving from your favorite web server.
+
+Jekyll also happens to be the engine behind link:/tags/github[GitHub] pages, which means it can use Jekyll to host a project's page, blog, or website from GitHub's servers for free.
+
 
 

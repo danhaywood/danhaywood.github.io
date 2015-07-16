@@ -4,5 +4,7 @@ tag: restful-objects
 ---
 :title: Restful Objects
 
+The link:http://restfulobjects.org/[Restful Objects] specification defines a set of RESTful resources, and corresponding JSON representations, for accessing and manipulating a domain object model.
 
+The specification is implemented by link:/tags/apache-isis[Apache Isis] (Java) and by the link:https://github.com/NakedObjectsGroup/NakedObjectsFramework[Naked Objects] framework (.NET).
 

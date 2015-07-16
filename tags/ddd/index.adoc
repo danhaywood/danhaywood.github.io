@@ -2,7 +2,9 @@
 layout: tag
 tag: ddd
 ---
-:title: DDD (Domain Driven Design)
+:title: DDD (Domain-Driven Design)
+
+link:https://en.wikipedia.org/wiki/Domain-driven_design[Domain-driven design] is an approach to software development for complex needs by connecting the implementation to an evolving model.
 
 
 

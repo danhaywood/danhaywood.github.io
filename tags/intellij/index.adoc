@@ -4,5 +4,6 @@ tag: intellij
 ---
 :title: Intellij
 
+link:https://www.jetbrains.com/idea/[IntelliJ] IDEA is an extensible IDE for developing in Java and other programming languages.  In their words it offers: "outstanding framework-specific coding assistance and productivity-boosting features for Java EE, Spring, GWT, Grails, Play and other frameworks, along with deployment tools for most application servers".
 
-
+Historically most development on link:/tags/apache-isis[Apache Isis] was performed using link:/tags/eclipse[Eclipse], though in 2014 we switched over to using IntelliJ.

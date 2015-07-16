@@ -8,7 +8,7 @@ title: Welcoming Maurizio Taverna as a new committer to Apache Isis
 wordpress_id: 1142
 tags:
 - apache-isis
-- committer
+- announce
 - java
 ---
 

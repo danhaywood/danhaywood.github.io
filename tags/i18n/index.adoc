@@ -4,5 +4,6 @@ tag: i18n
 ---
 :title: i18n (Internationalization)
 
+Posts on the topic of link:https://en.wikipedia.org/wiki/Internationalization_and_localization[internationalization].
 
 

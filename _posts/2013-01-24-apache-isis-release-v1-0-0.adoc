@@ -4,7 +4,7 @@ tags:
 - apache-isis
 excerpt: Following on from our recent graduation as an Apache top level project and the work we've done since ..
 ---
-:title: Apache Isis release v1.0.0
+:title: [ANN] Apache Isis release v1.0.0
 :slug: apache-isis-release-v1-0-0
 :author: danhaywood
 :comments: true

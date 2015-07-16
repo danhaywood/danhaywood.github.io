@@ -4,5 +4,5 @@ tag: assertj
 ---
 :title: AssertJ
 
-
+link:http://joel-costigliola.github.io/assertj/[AssertJ] provides a rich set of assertions, truly-helpful error messages, it improves test code readability and has been designed to be super easy to use within your favorite IDE.
 

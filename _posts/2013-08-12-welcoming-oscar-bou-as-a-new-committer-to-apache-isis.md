@@ -9,7 +9,6 @@ wordpress_id: 1200
 tags:
 - announce
 - apache-isis
-- committer
 ---
 
 I'm delighted to announce that Oscar Bou has been voted in as a committer on [Apache Isis](http://isis.apache.org), and also to as a member of the Isis PMC. The first gives Oscar the right to commit changes directly to Isis' codebase, the second gives him the right to be involved in future votes.

@@ -4,5 +4,7 @@ tag: isisaddons
 ---
 :title: Isis Addons
 
+link:http://www.isisaddons.org/[Isis Addons] provides modules, plugins and add-ons to extend the capabilities of link:/tags/apache-isis[Apache Isis].  You can use these either "out of the box", or as a starting point to modify and adapt to your own requirements.  Each add-on has its own repo. All add-ons use the `org.isisaddons` package.
+
 
 

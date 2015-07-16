@@ -4,5 +4,5 @@ tag: jmock
 ---
 :title: Jmock
 
-
+link:http://www.jmock.org/[JMock] is a library that supports test-driven development of Java code with mock objects.
 

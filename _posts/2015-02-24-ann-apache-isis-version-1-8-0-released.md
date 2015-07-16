@@ -12,7 +12,6 @@ tags:
 - bootstrap
 - i18n
 - isisaddons
-- java
 - neo4j
 ---
 

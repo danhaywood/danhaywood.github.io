@@ -13,7 +13,6 @@ tags:
 - apache-wicket
 - asf
 - bootstrap
-- committer
 ---
 
 I'm delighted to announce that Martin Grigorov has been voted in as a committer on [Apache Isis](http://isis.apache.org/), and also as a member of the Isis PMC.  The first gives Martin the right to commit changes directly to Isis' codebase, the second gives him the right to be involved in future votes.

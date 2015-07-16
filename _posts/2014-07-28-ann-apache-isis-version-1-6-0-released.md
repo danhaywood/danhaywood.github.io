@@ -14,7 +14,6 @@ tags:
 - apache-isis
 - guava
 - isisaddons
-- java
 ---
 
 We just pushed out 1.6.0 of Apache Isis, which now consists of:

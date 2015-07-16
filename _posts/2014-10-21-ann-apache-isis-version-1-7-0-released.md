@@ -10,7 +10,6 @@ tags:
 - announce
 - apache-isis
 - isisaddons
-- java
 ---
 
 We just pushed out Isis 1.7.0, which consists of:

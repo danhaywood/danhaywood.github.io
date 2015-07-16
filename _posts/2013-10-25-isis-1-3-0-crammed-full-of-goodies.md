@@ -1,5 +1,5 @@
 ---
-title: Apache Isis 1.3.0 - crammed full of goodies!
+title: '[ANN] Apache Isis 1.3.0 - crammed full of goodies!'
 author: danhaywood
 comments: true
 date: 2013-10-25 18:00:45+00:00

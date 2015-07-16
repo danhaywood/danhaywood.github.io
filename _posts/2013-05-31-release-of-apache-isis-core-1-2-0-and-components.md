@@ -11,7 +11,6 @@ tags:
 - apache-isis
 - apache-shiro
 - apache-wicket
-- java
 - maven
 ---
 

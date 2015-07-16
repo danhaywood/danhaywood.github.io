@@ -4,7 +4,7 @@ comments: true
 date: 2013-02-07 15:14:32+00:00
 layout: post
 slug: apache-isis-core-1-1-0-isis-shiro-security-1-1-0-isis-wicket-viewer-1-1-0
-title: Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0
+title: '[ANN] Apache Isis Core 1.1.0, Isis Shiro Security 1.1.0, Isis Wicket Viewer 1.1.0'
 wordpress_id: 1096
 tags:
 - announce
@@ -12,7 +12,6 @@ tags:
 - apache-shiro
 - apache-wicket
 - gmap3
-- java
 ---
 
 A few days ago we pushed out a new point release of [Apache Isis](http://isis.apache.org) Core (v1.1.0), along with two of its components Isis Shiro Security (v1.1.0) and the Isis Wicket Viewer (v1.1.0).  The Quickstart Archetype that combines Wicket, Shiro, Restful and JDO also got an update (v1.0.2).

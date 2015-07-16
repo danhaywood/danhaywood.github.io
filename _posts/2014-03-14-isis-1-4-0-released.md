@@ -1,5 +1,5 @@
 ---
-title: Apache Isis 1.4.0 released
+title: '[ANN] Apache Isis 1.4.0 released'
 slug: isis-1-4-0-released
 author: danhaywood
 comments: true

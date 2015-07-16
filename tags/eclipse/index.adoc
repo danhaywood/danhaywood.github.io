@@ -4,5 +4,6 @@ tag: eclipse
 ---
 :title: Eclipse
 
+link:http://www.eclipse.org/home/index.php[Eclipse] is an extensible IDE for developing in Java and other programming languages.  In their words it is: "an amazing open source community of Tools, Projects and Collaborative Working Groups. "
 
-
+Historically most development on link:/tags/apache-isis[Apache Isis] was performed using Eclipse, though in 2014 we switched over to using link:/tags/intellij[IntelliJ].

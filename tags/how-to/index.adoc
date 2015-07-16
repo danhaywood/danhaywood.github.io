@@ -4,5 +4,5 @@ tag: how-to
 ---
 :title: How-to guides
 
-
+Posts that explain in detail how to accomplish some technical task.
 

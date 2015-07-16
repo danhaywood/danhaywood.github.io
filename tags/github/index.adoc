@@ -4,5 +4,6 @@ tag: github
 ---
 :title: Github
 
+link:https://github.com[Github] is a powerful collaboration, code review, and code management platform for open source and private projects.
 
 

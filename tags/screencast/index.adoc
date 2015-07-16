@@ -4,5 +4,5 @@ tag: screencast
 ---
 :title: Screencasts
 
-
+Posts that use screencasts to highlight various features, usually of link:/tags/apache-isis[Apache Isis] or its larger ecosystem (such as link:/tags/isisaddons[Isis addons]).
 

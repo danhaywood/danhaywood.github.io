@@ -4,5 +4,6 @@ tag: gmap3
 ---
 :title: Gmap3
 
+link:https://github.com/isisaddons/isis-wicket-gmap3[gmap3] is a component for Apache Isis' Wicket viewer that renders a collection of entities upon a map.
 
 
