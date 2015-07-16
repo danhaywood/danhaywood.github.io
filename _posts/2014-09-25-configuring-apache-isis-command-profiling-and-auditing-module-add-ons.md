@@ -20,6 +20,6 @@ Two of the modules that we've moved into the add-ons site are for [auditing](htt
 
 The screencast below explains how to get it configured; check out the module's respective **README**s for screenshots and more detailed discussion.
 
-[youtube https://www.youtube.com/watch?v=g01tK58MxJ8&w=640&h=360]
+<iframe width="640" height="360" src="https://www.youtube.com/embed/g01tK58MxJ8" frameborder="0" allowfullscreen></iframe>
 
 These modules should work with any Isis app, so if you're working with Isis, do check them out.
