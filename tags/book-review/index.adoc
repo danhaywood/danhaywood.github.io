@@ -1,0 +1,8 @@
+---
+layout: tag
+tag: book-review
+---
+:title: Book reviews
+
+Occasionally I'm asked to review books (and get a copy of the e-book for my trouble).
+

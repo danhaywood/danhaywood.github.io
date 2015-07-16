@@ -1,0 +1,7 @@
+---
+layout: tag
+tag: angular
+---
+:title: Angular (formerly AngularJS)
+
+link:https://angular.io/[Angular] is a development platform for building mobile and desktop web applications.  It is an evolution of the original link:https://angularjs.org/[AngularJS].

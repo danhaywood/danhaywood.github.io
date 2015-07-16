@@ -7,10 +7,9 @@ slug: still-a-place-for-books
 title: Still a place for books...
 wordpress_id: 1242
 tags:
-- angularjs
-- apache isis
-- packt
-- stackoverflow
+- angular
+- apache-isis
+- book-review
 ---
 
 Like everyone else, if I need to know how use some little API, I google for the answer and then follow the links to stackoverflow.  Yesterday my searches that took me there included an error regarding a [missing Windows Identity Foundation DLL](http://stackoverflow.com/questions/10166114/unable-to-find-assembly-microsoft-identitymodel-error-on-azure), how to do [try/catch/finally in Powershell](http://stackoverflow.com/questions/6779186/powershell-try-catch-finally) (just as you would've thought, by the way), and how to [change the name of a Windows service](http://stackoverflow.com/questions/3887400/how-can-i-change-the-name-of-a-windows-service) (somewhat more obscure).  In fact my google history for yesterday shows I visited SO 15 times that day with different queries.

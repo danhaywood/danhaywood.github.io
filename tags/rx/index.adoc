@@ -1,0 +1,9 @@
+---
+layout: tag
+tag: rx
+---
+:title: Reactive Extensions
+
+link:http://reactivex.io/[Reactive Extensions (RX)] is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming: "the Observer pattern done right".
+
+Reactive extensions are implemented on many platforms, including link:https://github.com/ReactiveX/RxJava[Java], link:https://github.com/Reactive-Extensions/Rx.NET[.NET] and link:https://github.com/Reactive-Extensions/RxJS[Javascript].

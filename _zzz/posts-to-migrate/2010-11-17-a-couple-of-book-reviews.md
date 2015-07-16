@@ -7,12 +7,10 @@ slug: a-couple-of-book-reviews
 title: A couple of book reviews...
 wordpress_id: 687
 tags:
-- book
+- book-review
 ---
 
 About my book "Domain Driven Design using Naked Objects", that is...
-
-
 
 	
   * the [first review](http://www.i-programmer.info/bookreviews/4-methodology/1558-domain-driven-design-using-naked-objects-.html) is on [I-Programmer Info](http://www.i-programmer.info/), not a site I frequent, but which calls itself an "online magazine for programmers".  The material there looks ok, actually, if a little heavy on the adverts

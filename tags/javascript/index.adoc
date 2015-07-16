@@ -1,0 +1,12 @@
+---
+layout: tag
+tag: javascript
+---
+:title: Javascript
+
+link:https://en.wikipedia.org/wiki/JavaScript[JavaScript], also known as ECMAScript (the untrademarked name used for the standard), is a dynamic programming language.  It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed.
+
+
+
+
+

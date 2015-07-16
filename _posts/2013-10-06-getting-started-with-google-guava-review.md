@@ -6,6 +6,9 @@ layout: post
 slug: getting-started-with-google-guava-review
 title: Getting Started with Google Guava - review
 wordpress_id: 1205
+tags:
+- book-review
+- guava
 ---
 
 "[Getting Started with Google Guava](http://www.packtpub.com/getting-started-with-google-guava/book)" isn't a bad book to get you started with [Google Guava](https://code.google.com/p/guava-libraries/) - indeed, it'd probably be quite hard to write a bad book on Guava given just how good a library Guava is.

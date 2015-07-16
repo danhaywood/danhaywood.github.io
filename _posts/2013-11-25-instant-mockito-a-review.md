@@ -11,7 +11,7 @@ tags:
 - java
 - jmock
 - mockito
-- review
+- book-review
 - tdd
 ---
 

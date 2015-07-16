@@ -4,8 +4,12 @@ comments: true
 date: 2014-01-23 12:31:36+00:00
 layout: post
 slug: isis-integration-with-jrebel
-title: Isis integration with JRebel
+title: Apache Isis integration with JRebel
 wordpress_id: 1232
+tags:
+- jrebel
+- apache-isis
+- screencast
 ---
 
 You probably know about [JRebel](http://zeroturnaround.com/software/jrebel/) already - it's a commercial product that dynamically reloads Java classes without having to redeploy your webapp.  [Not necessarily the cheapest](http://zeroturnaround.com/software/jrebel/) of products, but if you're a full-time dev working on the JVM, then it can easily pay for itself.   Oh, and it's [free for use on any hobby/open source projects](https://my.jrebel.com/).
@@ -16,5 +20,5 @@ But, with a bit of experimentation, I've got what I think is a workable integrat
 
 And if you just want to see what this means, take a look at this screencast (also available on the [the Isis website](http://isis.apache.org/getting-started/screencasts.html#jrebel)):
 
-[youtube http://www.youtube.com/watch?v=PxVgbz3ae_g&w=560&h=315]
+<iframe width="640" height="360" src="https://www.youtube.com/embed/PxVgbz3ae_g" frameborder="0" allowfullscreen></iframe>
 
