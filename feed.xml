@@ -94,6 +94,30 @@
             </item>
         
             <item>
+                <title>Configuring Apache Isis&#39; Security Module Add-on</title>
+                <dc:creator></dc:creator>
+                
+                    <description>I recently completed a new security module that handles both authentication and authorization for Isis apps. </description>
+                
+                            <pubDate>Tue, 23 Sep 2014 06:32:29 +0000</pubDate>
+                <link>/2014/09/23/configuring-apache-isis-security-module-add-on/</link>
+                <guid isPermaLink="true">/2014/09/23/configuring-apache-isis-security-module-add-on/</guid>
+            </item>
+        
+            <item>
+                <title>How to restore a PostgreSQL backup</title>
+                <dc:creator></dc:creator>
+                
+                    <description>There would seem to be several ways, but if the backup file was created by pg_dump and is actually a series of DDL and INSERT statements, then use:
+
+</description>
+                
+                            <pubDate>Fri, 22 Aug 2014 10:35:26 +0000</pubDate>
+                <link>/2014/08/22/how-to-restore-a-postgresql-backup/</link>
+                <guid isPermaLink="true">/2014/08/22/how-to-restore-a-postgresql-backup/</guid>
+            </item>
+        
+            <item>
                 <title>[ANN] Apache Isis version 1.6.0 Released</title>
                 <dc:creator></dc:creator>
                 
@@ -102,32 +126,6 @@
                             <pubDate>Mon, 28 Jul 2014 17:50:34 +0000</pubDate>
                 <link>/2014/07/28/ann-apache-isis-version-1-6-0-released/</link>
                 <guid isPermaLink="true">/2014/07/28/ann-apache-isis-version-1-6-0-released/</guid>
-            </item>
-        
-            <item>
-                <title>[ANN] Apache Isis version 1.5.0 and related components Released</title>
-                <dc:creator></dc:creator>
-                
-                    <description>The Isis team is pleased to announce the release of:
-
-</description>
-                
-                            <pubDate>Sat, 07 Jun 2014 18:21:32 +0000</pubDate>
-                <link>/2014/06/07/ann-apache-isis-version-1-5-0-and-related-components-released/</link>
-                <guid isPermaLink="true">/2014/06/07/ann-apache-isis-version-1-5-0-and-related-components-released/</guid>
-            </item>
-        
-            <item>
-                <title>[ANN] Apache Isis 1.4.0 released</title>
-                <dc:creator></dc:creator>
-                
-                    <description>After 4 months development, we’ve just released Apache Isis 1.4.0, and supporting components.
-
-</description>
-                
-                            <pubDate>Fri, 14 Mar 2014 19:07:33 +0000</pubDate>
-                <link>/2014/03/14/isis-1-4-0-released/</link>
-                <guid isPermaLink="true">/2014/03/14/isis-1-4-0-released/</guid>
             </item>
         
     </channel>
