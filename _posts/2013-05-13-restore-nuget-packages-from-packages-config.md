@@ -15,17 +15,16 @@ Another in my [occasional]({{ site.baseurl }}/2013/04/24/updating-a-nuget-packag
 
 This one is to restore all packages from a packages.config file:
 
-[sourcecode language="powershell"]
-function Restore-Packages() {
-  $proj = get-project
-  get-package -project $proj.name | % {
-    Write-Host $_.id;
-    uninstall-package -projectname $proj.name -id $_.id -version $_.version -RemoveDependencies -force ;
-    install-package -projectname $proj.name -id $_.id -version $_.version
+<pre>
+  function Restore-Packages() {
+    $proj = get-project
+    get-package -project $proj.name | % {
+      Write-Host $_.id;
+      uninstall-package -projectname $proj.name -id $_.id -version $_.version -RemoveDependencies -force ;
+      install-package -projectname $proj.name -id $_.id -version $_.version
+    }
   }
-}
-
-[/sourcecode]
+</pre>
 
 To use, first edit the packages.config as you require. Then, in the Package Manager Console in VS (in the 'default project' dropdown set correctly), just type:
 
