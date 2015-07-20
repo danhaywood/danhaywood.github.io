@@ -73,7 +73,19 @@
 </url>
 
 <url>
+    <loc>http://www.danhaywood.com/2013/11/21/oredev-2013-rrraddd/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/11/14/oredev-2013/</loc>
+</url>
+
+<url>
     <loc>http://www.danhaywood.com/2013/10/25/isis-1-3-0-crammed-full-of-goodies/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/10/07/google-summer-of-code-veteran-orgs-apache-software-foundation/</loc>
 </url>
 
 <url>
@@ -82,6 +94,14 @@
 
 <url>
     <loc>http://www.danhaywood.com/2013/08/12/welcoming-oscar-bou-as-a-new-committer-to-apache-isis/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/07/16/using-buildreactor-to-monitor-ci-jobs/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/07/15/enabling-ci-for-github-projects/</loc>
 </url>
 
 <url>
@@ -270,6 +290,12 @@
 
 
 <url>
+    <loc>http://www.danhaywood.com/tags/gsoc/</loc>
+</url>
+
+
+
+<url>
     <loc>http://www.danhaywood.com/tags/gmap3/</loc>
 </url>
 
@@ -295,6 +321,18 @@
 
 <url>
     <loc>http://www.danhaywood.com/tags/ddd/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/conference/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/ci/</loc>
 </url>
 
 
@@ -355,6 +393,12 @@
 
 <url>
     <loc>http://www.danhaywood.com/tags/angular/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/agile/</loc>
 </url>
 
 
