@@ -33,7 +33,10 @@ layout: default
         </div>
 
         <span class="date">{{ page.date | date: '%B %d, %Y'}}</span>
-        <span class="category">{% for tag in page.tags %} {{ tag }} {% endfor %}</span>
+
+        <span class="category">{% for tag in page.tags %}
+            <a href="/tags/{{ tag }}/">{{ tag }}</a>
+            {% endfor %}</span>
 
 
     </article>

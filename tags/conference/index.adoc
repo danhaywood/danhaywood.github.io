@@ -1,0 +1,8 @@
+---
+layout: tag
+tag: conference
+---
+:title: Conferences
+
+Conferences that I have attended; conference sessions that I have given.
+

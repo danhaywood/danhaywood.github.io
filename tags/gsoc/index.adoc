@@ -1,0 +1,10 @@
+---
+layout: tag
+tag: gsoc
+---
+:title: Google Summer of Code
+
+The Google Summer of Code initiative provides the opportunity for undergraduates from around the world to participate in open source projects, effectively as interns, and to get paid for the work courtesy of Google Inc.
+
+The Apache Software Foundation is regularly involved; its committers identify projects and act as mentors to GSOC students.
+

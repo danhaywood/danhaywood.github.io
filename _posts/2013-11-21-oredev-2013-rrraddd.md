@@ -9,9 +9,7 @@ wordpress_id: 1224
 tags:
 - apache isis
 - conference
-- demo
 - github
-- naked objects
 ---
 
 In my [last post]({{ site.baseurl }}/2013/11/14/oredev-2013/) I talked a little bit about attending Oredev 2013, and promised I'd talk a bit about my own talk.

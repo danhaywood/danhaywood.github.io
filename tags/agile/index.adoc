@@ -1,0 +1,6 @@
+---
+layout: tag
+tag: agile
+---
+:title: Agile Software Development
+
