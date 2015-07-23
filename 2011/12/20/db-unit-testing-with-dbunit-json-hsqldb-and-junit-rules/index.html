@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+         DB unit testing with dbUnit, JSON, HSQLDB and JUnit Rules
+        
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="/css/main.css" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Dan Haywood" href="/feed.xml">
+
+    <link href="/css/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="top" class="main-header">
+            
+        <div class="module title color-1" >
+            <h1>
+                <a href="/">
+                    <div>
+                        <span>Dan Haywood</span>
+                    </div>
+                </a>
+            </h1>
+        </div>
+
+        <div class="module description color-3">
+            domain driven design, apache&nbsp;isis, restful&nbsp;objects, naked&nbsp;objects, agile, tdd
+        </div>
+
+        <div class="module links color-4">
+            <span class="gravatar">
+                <img src="/images/DanHaywood-2011-280x240.jpg" width="92px"/>
+            </span>
+            <div class="profiles">
+                <a href="https://github.com/danhaywood" title="Github profile" target="_blank">github</a>
+                <a href="https://www.youtube.com/user//TheDanHaywood" title="Youtube channel" target="_blank">Youtube</a>
+                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/dkhaywood" title="Twitter posts" target="_blank">twitter</a>
+                <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
+                <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+            </div>
+        </div>
+
+        <div class="module tags color-2">
+            <div>
+                
+                
+                    <span style="font-size: 63%">
+                    <a href="/tags/agile/">
+                        agile
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/angular/">
+                        angular
+                    </a></span>
+                    <span style="font-size: 106%">
+                    <a href="/tags/announce/">
+                        announce
+                    </a></span>
+                    <span style="font-size: 142%">
+                    <a href="/tags/apache-isis/">
+                        apache-isis
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/apache-shiro/">
+                        apache-shiro
+                    </a></span>
+                    <span style="font-size: 74%">
+                    <a href="/tags/apache-wicket/">
+                        apache-wicket
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/asciidoc/">
+                        asciidoc
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/asf/">
+                        asf
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/assertj/">
+                        assertj
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/book-review/">
+                        book-review
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/bootstrap/">
+                        bootstrap
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/ci/">
+                        ci
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/conference/">
+                        conference
+                    </a></span>
+                    <span style="font-size: 74%">
+                    <a href="/tags/ddd/">
+                        ddd
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/eclipse/">
+                        eclipse
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/git/">
+                        git
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/github/">
+                        github
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/gmap3/">
+                        gmap3
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/gsoc/">
+                        gsoc
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/guava/">
+                        guava
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/hamcrest/">
+                        hamcrest
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/how-to/">
+                        how-to
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/i18n/">
+                        i18n
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/intellij/">
+                        intellij
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/isisaddons/">
+                        isisaddons
+                    </a></span>
+                    <span style="font-size: 110%">
+                    <a href="/tags/java/">
+                        java
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/javascript/">
+                        javascript
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/jekyll/">
+                        jekyll
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/jmock/">
+                        jmock
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/jrebel/">
+                        jrebel
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/junit/">
+                        junit
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/maven/">
+                        maven
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/mockito/">
+                        mockito
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/naked-objects/">
+                        naked-objects
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/neo4j/">
+                        neo4j
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/nuget/">
+                        nuget
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/postgres/">
+                        postgres
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/powershell/">
+                        powershell
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/restful-objects/">
+                        restful-objects
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/rx/">
+                        rx
+                    </a></span>
+                    <span style="font-size: 88%">
+                    <a href="/tags/screencast/">
+                        screencast
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/tdd/">
+                        tdd
+                    </a></span>
+            </div>
+        </div>
+
+        <div class="footer module">
+    <span class="licence">Copyright 2015 &copy; Dan Haywood</span>
+<!--
+    <p>
+        Credits: <a href="http://jekyllrb.com/" target="_blank">Jekyllrb</a>, <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block theme</a> and others.
+    </p>
+-->
+</div>
+
+    </header>
+
+    <div class="main-content">
+
+
+    <article class="module color-3 post">
+
+        <div class="navigation">
+         
+          <span class="previous-link">
+            <i class="fa fa-step-backward"></i>
+            <a rel="prev" href="/2009/10/11/converting-eclipse-templates-to-intellij-idea/">Previous</a>
+          </span>
+        
+         
+          <span class="next-link" style="float:right;">
+            <a rel="next" href="/2013/01/12/apache-isis-graduates-as-a-top-level-apache-project-gets-a-new-website/">Next</a>
+            <i class="fa fa-step-forward"></i>
+          </span>
+        
+        </div>
+
+        <h1>DB unit testing with dbUnit, JSON, HSQLDB and JUnit Rules</h1>
+
+
+        <hr>
+
+
+        <div class="content">
+        <p>In this week’s run of my TDD course, I thought it would be interesting to write a little fixture to make it easier to use <a href="http://www.dbunit.org/">dbUnit</a>.  My original thought was just to teach dbUnit about JSON, but it turns out that <a href="http://www.insaneprogramming.be/?p=105">Lieven Doclo</a> has done that already.  So I decided to go a step further and also combine dbUnit with <a href="http://kentbeck.github.com/junit/javadoc/latest/org/junit/rules/MethodRule.html">JUnit Rules</a>, and provide automatic bootstrapping of an <a href="http://hsqldb.org/">HSQLDB</a> in-memory object store.</p>
+
+<p>The following test shows what I ended up with:</p>
+
+<pre>
+package com.danhaywood.tdd.dbunit.test;
+
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import org.dbunit.Assertion;
+import org.dbunit.dataset.ITable;
+import org.hsqldb.jdbcDriver;
+import org.junit.Rule;
+import org.junit.Test;
+
+import com.danhaywood.tdd.dbunit.DbUnitRule;
+import com.danhaywood.tdd.dbunit.DbUnitRule.Ddl;
+import com.danhaywood.tdd.dbunit.DbUnitRule.JsonData;
+
+public class DbUnitRuleExample {
+
+    @Rule
+    public DbUnitRule dbUnit = new DbUnitRule(
+            DbUnitRuleExample.class, jdbcDriver.class,
+            "jdbc:hsqldb:file:src/test/resources/testdb", "SA", "");
+
+    @Ddl("customer.ddl")
+    @JsonData("customer.json")
+    @Test
+    public void update_lastName() throws Exception {
+
+        // when
+        Statement statement = dbUnit.getConnection().createStatement();
+        statement.executeUpdate("update customer set last_name='Bloggs' where id=2");
+
+        // then (verify directly)
+        ResultSet rs2 = dbUnit.executeQuery("select last_name from customer where id = 2");
+        assertThat(rs2.next(), is(true));
+        assertThat(rs2.getString("last_name"), equalTo("Bloggs"));
+
+        // then (verify using datasets)
+        ITable actualTable = dbUnit.createQueryTable("customer", "select * from customer order by id");
+        ITable expectedTable = dbUnit.jsonDataSet("customer-updated.json").getTable("customer");
+
+        Assertion.assertEquals(expectedTable, actualTable);
+    }
+}
+</pre>
+
+<p>where <code>customer.ddl</code> is:</p>
+
+<pre>
+drop table customer if exists;
+create table customer (
+	id         int         not null primary key
+   ,first_name varchar(30) not null
+   ,initial    varchar(1)  null
+   ,last_name  varchar(30) not null
+)
+</pre>
+
+<p>and <code>customer.json</code> (the initial data set) is:</p>
+
+<pre>
+{
+  "customer": [
+	    {
+	      "id": 1,
+	      "first_name": "John",
+	      "initial": "K",
+	      "last_name": "Smith"
+	    },
+	    {
+	      "id": 2,
+	      "first_name": "Mary",
+	      "last_name": "Jones"
+	    }
+  ]
+}
+</pre>
+
+<p>and <code>customer-updated.json</code> (the final data set) is:</p>
+
+<pre>
+{
+  "customer": [
+	    {
+	      "id": 1,
+	      "first_name": "John",
+	      "initial": "K",
+	      "last_name": "Smith"
+	    },
+	    {
+	      "id": 2,
+	      "first_name": "Mary",
+	      "last_name": "Bloggs"
+	    }
+	  ]
+}
+</pre>
+
+<p>As you’ve probably figured out, the <code>@Ddl</code> annotation optionally specifies DDL script(s) to run against the database, while the @JsonData defines a JSON-formatted dataset.</p>
+
+<p>The actual implementation of the <code>DbUnitRule</code> class is:</p>
+
+<pre>
+package com.danhaywood.tdd.dbunit;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.nio.charset.Charset;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.dbunit.IDatabaseTester;
+import org.dbunit.JdbcDatabaseTester;
+import org.dbunit.database.IDatabaseConnection;
+import org.dbunit.dataset.DataSetException;
+import org.dbunit.dataset.IDataSet;
+import org.dbunit.dataset.ITable;
+import org.junit.rules.MethodRule;
+import org.junit.runners.model.FrameworkMethod;
+import org.junit.runners.model.Statement;
+
+import com.google.common.io.Resources;
+
+public class DbUnitRule implements MethodRule {
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target({ ElementType.METHOD })
+    public static @interface Ddl {
+        String[] value();
+    }
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @Target({ ElementType.METHOD })
+    public static @interface JsonData {
+        String value();
+    }
+
+    private final Class<?> resourceBase;
+
+    private IDatabaseTester databaseTester;
+    private IDatabaseConnection dbUnitConnection;
+
+    private Connection connection;
+    private java.sql.Statement statement;
+
+    public DbUnitRule(Class<?> resourceBase, Class&lt;?&gt; driver, String url, String user, String password) {
+        this.resourceBase = resourceBase;
+        try {
+            databaseTester = new JdbcDatabaseTester(driver.getName(), url, user, password);
+            dbUnitConnection = databaseTester.getConnection();
+            connection = dbUnitConnection.getConnection();
+            statement = connection.createStatement();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Statement apply(final Statement base, final FrameworkMethod method, final Object target) {
+
+        return new Statement() {
+
+            @Override
+            public void evaluate() throws Throwable {
+
+                try {
+                    Ddl ddl = method.getAnnotation(Ddl.class);
+                    if (ddl != null) {
+                        String[] values = ddl.value();
+                        for (String value : values) {
+                            executeUpdate(Resources.toString(
+                                resourceBase.getResource(value), Charset.defaultCharset()));
+                        }
+                    }
+
+                    JsonData data = method.getAnnotation(JsonData.class);
+                    if (data != null) {
+                        IDataSet ds = new JSONDataSet(resourceBase.getResourceAsStream(data.value()));
+                        databaseTester.setDataSet(ds);
+                    }
+
+                    databaseTester.onSetup();
+
+                    base.evaluate();
+                } finally {
+                    databaseTester.onTearDown();
+                }
+            }
+        };
+    }
+
+    public java.sql.Connection getConnection() {
+        return connection;
+    }
+
+    public void executeUpdate(String sql) throws SQLException {
+        statement.executeUpdate(sql);
+    }
+
+    public ResultSet executeQuery(String sql) throws SQLException {
+        return statement.executeQuery(sql);
+    }
+
+    public IDataSet jsonDataSet(String datasetResource) {
+        return new JSONDataSet(resourceBase.getResourceAsStream(datasetResource));
+    }
+
+    public ITable createQueryTable(String string, String string2) throws DataSetException, SQLException {
+        return dbUnitConnection.createQueryTable(string, string2);
+    }
+}
+</pre>
+
+<p>This uses Lieven Doclo’s <code>JSONDataSet</code> (copied here for your convenience):</p>
+
+<pre>
+import org.codehaus.jackson.map.ObjectMapper;
+import org.dbunit.dataset.*;
+import org.dbunit.dataset.datatype.DataType;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
+
+/**
+ * DBUnit DataSet format for JSON based datasets. It is similar to the flat XML layout,
+ * but has some improvements (columns are calculated by parsing the entire dataset, not just
+ * the first row). It uses Jackson, a fast JSON processor.
+ * <br /><br />
+ * The format looks like this:
+ * <br />
+ * <pre>
+ * {
+ *    "&lt;table_name&gt;": [
+ *        {
+ *             "&lt;column&gt;":&lt;value&gt;,
+ *             ...
+ *        },
+ *        ...
+ *    ],
+ *    ...
+ * }
+ * </pre>
+ * <br />
+ * I.e.:
+ * <br />
+ * <pre>
+ * {
+ *    "test_table": [
+ *        {
+ *             "id":1,
+ *             "code":"JSON dataset",
+ *        },
+ *        {
+ *             "id":2,
+ *             "code":"Another row",
+ *        }
+ *    ],
+ *    "another_table": [
+ *        {
+ *             "id":1,
+ *             "description":"Foo",
+ *        },
+ *        {
+ *             "id":2,
+ *             "description":"Bar",
+ *        }
+ *    ],
+ *    ...
+ * }
+ * </pre>
+ *
+ * @author Lieven DOCLO
+ */
+public class JSONDataSet extends AbstractDataSet {
+    // The parser for the dataset JSON file
+    private JSONITableParser tableParser = new JSONITableParser();
+
+    // The tables after parsing
+    private List<itable> tables;
+
+    /**
+     * Creates a JSON dataset based on a file
+     * @param file A JSON dataset file
+     */
+    public JSONDataSet(File file) {
+        tables = tableParser.getTables(file);
+    }
+
+    /**
+     * Creates a JSON dataset based on an inputstream
+     * @param is An inputstream pointing to a JSON dataset
+     */
+    public JSONDataSet(InputStream is) {
+        tables = tableParser.getTables(is);
+    }
+
+    @Override
+    protected ITableIterator createIterator(boolean reverse) throws DataSetException {
+        return new DefaultTableIterator(tables.toArray(new ITable[tables.size()]));
+    }
+
+    private class JSONITableParser {
+
+        private ObjectMapper mapper = new ObjectMapper();
+
+        /**
+         * Parses a JSON dataset file and returns the list of DBUnit tables contained in
+         * that file
+         * @param jsonFile A JSON dataset file
+         * @return A list of DBUnit tables
+         */
+        public List<itable> getTables(File jsonFile) {
+            try {
+                return getTables(new FileInputStream(jsonFile));
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+        }
+
+        /**
+         * Parses a JSON dataset input stream and returns the list of DBUnit tables contained in
+         * that input stream
+         * @param jsonStream A JSON dataset input stream
+         * @return A list of DBUnit tables
+         */
+        @SuppressWarnings("unchecked")
+        public List<itable> getTables(InputStream jsonStream) {
+            List<itable> tables = new ArrayList<itable>();
+            try {
+                // get the base object tree from the JSON stream
+                Map&lt;String, Object&gt; dataset = mapper.readValue(jsonStream, Map.class);
+                // iterate over the tables in the object tree
+                for (Map.Entry&lt;String, Object&gt; entry : dataset.entrySet()) {
+                    // get the rows for the table
+                    List&lt;Map&lt;String, Object&gt;&gt; rows = (List&lt;Map&lt;String, Object&gt;&gt;) entry.getValue();
+                    ITableMetaData meta = getMetaData(entry.getKey(), rows);
+                    // create a table based on the metadata
+                    DefaultTable table = new DefaultTable(meta);
+                    int rowIndex = 0;
+                    // iterate through the rows and fill the table
+                    for (Map&lt;String, Object&gt; row : rows) {
+                        fillRow(table, row, rowIndex++);
+                    }
+                    // add the table to the list of DBUnit tables
+                    tables.add(table);
+                }
+
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+            return tables;
+        }
+
+        /**
+         * Gets the table meta data based on the rows for a table
+         * @param tableName The name of the table
+         * @param rows The rows of the table
+         * @return The table metadata for the table
+         */
+        private ITableMetaData getMetaData(String tableName, List&lt;Map&lt;String, Object&gt;&gt; rows) {
+            Set<string> columns = new LinkedHashSet<string>();
+            // iterate through the dataset and add the column names to a set
+            for (Map&lt;String, Object&gt; row : rows) {
+                for (Map.Entry&lt;String, Object&gt; column : row.entrySet()) {
+                    columns.add(column.getKey());
+                }
+            }
+            List<column> list = new ArrayList<column>(columns.size());
+            // create a list of DBUnit columns based on the column name set
+            for (String s : columns) {
+                list.add(new Column(s, DataType.UNKNOWN));
+            }
+            return new DefaultTableMetaData(tableName, list.toArray(new Column[list.size()]));
+        }
+
+        /**
+         * Fill a table row
+         * @param table The table to be filled
+         * @param row A map containing the column values
+         * @param rowIndex The index of the row to te filled
+         */
+        private void fillRow(DefaultTable table, Map&lt;String, Object&gt; row, int rowIndex) {
+            try {
+                table.addRow();
+                // set the column values for the current row
+                for (Map.Entry&lt;String, Object&gt; column : row.entrySet()) {
+                    table.setValue(rowIndex, column.getKey(), column.getValue());
+
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+        }
+    }
+}
+
+
+The libraries I used for this (ie are dependencies) are:
+
+  * hsqldb 2.2.6
+  * dbunit 2.4.8
+  * jackson 1.9.3
+  * slf4j-api-1.6.4, slf4j-nop-1.6.4
+  * google-guava 10.0.1
+  * junit 4.8
+
+As ever, comments welcome.
+</column></column></string></string></itable></itable></itable></itable></itable></pre>
+
+        </div>
+
+        <span class="date">December 20, 2011</span>
+
+        <span class="category">
+            <a href="/tags/java/">java</a>
+            
+            <a href="/tags/junit/">junit</a>
+            
+            <a href="/tags/tdd/">tdd</a>
+            </span>
+
+
+    </article>
+
+
+    <div class="social module color-4">
+        <ul>
+
+            
+
+            
+
+            
+            
+                
+            
+                
+            
+                
+            
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=DB unit testing with dbUnit, JSON, HSQLDB and JUnit Rules&u=/2011/12/20/db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=DB unit testing with dbUnit, JSON, HSQLDB and JUnit Rules&url=/2011/12/20/db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules/&via=dkhaywood&hashtags=java,junit,tdd,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2011/12/20/db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules/">Google+</a></li>
+        </ul>
+
+    </div>
+
+    
+
+<div class="module color-3">
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'danhaywood';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

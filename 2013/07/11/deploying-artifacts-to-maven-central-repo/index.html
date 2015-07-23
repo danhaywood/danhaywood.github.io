@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+         Deploying artifacts to Maven central repo
+        
+    </title>
+
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="stylesheet" href="/css/main.css" type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="alternate" type="application/rss+xml" title="Dan Haywood" href="/feed.xml">
+
+    <link href="/css/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header id="top" class="main-header">
+            
+        <div class="module title color-1" >
+            <h1>
+                <a href="/">
+                    <div>
+                        <span>Dan Haywood</span>
+                    </div>
+                </a>
+            </h1>
+        </div>
+
+        <div class="module description color-3">
+            domain driven design, apache&nbsp;isis, restful&nbsp;objects, naked&nbsp;objects, agile, tdd
+        </div>
+
+        <div class="module links color-4">
+            <span class="gravatar">
+                <img src="/images/DanHaywood-2011-280x240.jpg" width="92px"/>
+            </span>
+            <div class="profiles">
+                <a href="https://github.com/danhaywood" title="Github profile" target="_blank">github</a>
+                <a href="https://www.youtube.com/user//TheDanHaywood" title="Youtube channel" target="_blank">Youtube</a>
+                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/dkhaywood" title="Twitter posts" target="_blank">twitter</a>
+                <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
+                <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
+            </div>
+        </div>
+
+        <div class="module tags color-2">
+            <div>
+                
+                
+                    <span style="font-size: 63%">
+                    <a href="/tags/agile/">
+                        agile
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/angular/">
+                        angular
+                    </a></span>
+                    <span style="font-size: 106%">
+                    <a href="/tags/announce/">
+                        announce
+                    </a></span>
+                    <span style="font-size: 142%">
+                    <a href="/tags/apache-isis/">
+                        apache-isis
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/apache-shiro/">
+                        apache-shiro
+                    </a></span>
+                    <span style="font-size: 74%">
+                    <a href="/tags/apache-wicket/">
+                        apache-wicket
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/asciidoc/">
+                        asciidoc
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/asf/">
+                        asf
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/assertj/">
+                        assertj
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/book-review/">
+                        book-review
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/bootstrap/">
+                        bootstrap
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/ci/">
+                        ci
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/conference/">
+                        conference
+                    </a></span>
+                    <span style="font-size: 74%">
+                    <a href="/tags/ddd/">
+                        ddd
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/eclipse/">
+                        eclipse
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/git/">
+                        git
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/github/">
+                        github
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/gmap3/">
+                        gmap3
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/gsoc/">
+                        gsoc
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/guava/">
+                        guava
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/hamcrest/">
+                        hamcrest
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/how-to/">
+                        how-to
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/i18n/">
+                        i18n
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/intellij/">
+                        intellij
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/isisaddons/">
+                        isisaddons
+                    </a></span>
+                    <span style="font-size: 110%">
+                    <a href="/tags/java/">
+                        java
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/javascript/">
+                        javascript
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/jekyll/">
+                        jekyll
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/jmock/">
+                        jmock
+                    </a></span>
+                    <span style="font-size: 67%">
+                    <a href="/tags/jrebel/">
+                        jrebel
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/junit/">
+                        junit
+                    </a></span>
+                    <span style="font-size: 77%">
+                    <a href="/tags/maven/">
+                        maven
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/mockito/">
+                        mockito
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/naked-objects/">
+                        naked-objects
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/neo4j/">
+                        neo4j
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/nuget/">
+                        nuget
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/postgres/">
+                        postgres
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/powershell/">
+                        powershell
+                    </a></span>
+                    <span style="font-size: 70%">
+                    <a href="/tags/restful-objects/">
+                        restful-objects
+                    </a></span>
+                    <span style="font-size: 63%">
+                    <a href="/tags/rx/">
+                        rx
+                    </a></span>
+                    <span style="font-size: 88%">
+                    <a href="/tags/screencast/">
+                        screencast
+                    </a></span>
+                    <span style="font-size: 81%">
+                    <a href="/tags/tdd/">
+                        tdd
+                    </a></span>
+            </div>
+        </div>
+
+        <div class="footer module">
+    <span class="licence">Copyright 2015 &copy; Dan Haywood</span>
+<!--
+    <p>
+        Credits: <a href="http://jekyllrb.com/" target="_blank">Jekyllrb</a>, <a href="https://github.com/drvy/minimal-block" target="_blank">minimal-block theme</a> and others.
+    </p>
+-->
+</div>
+
+    </header>
+
+    <div class="main-content">
+
+
+    <article class="module color-3 post">
+
+        <div class="navigation">
+         
+          <span class="previous-link">
+            <i class="fa fa-step-backward"></i>
+            <a rel="prev" href="/2013/05/13/restore-nuget-packages-from-packages-config/">Previous</a>
+          </span>
+        
+         
+          <span class="next-link" style="float:right;">
+            <a rel="next" href="/2013/07/15/enabling-ci-for-github-projects/">Next</a>
+            <i class="fa fa-step-forward"></i>
+          </span>
+        
+        </div>
+
+        <h1>Deploying artifacts to Maven central repo</h1>
+
+
+        <hr>
+
+
+        <div class="content">
+        <p>I have a <a href="https://github.com/danhaywood?tab=repositories">bunch of open source github repos</a>, mostly related to <a href="http://isis.apache.org">Apache Isis</a>, and have been exploring how to deploy these artifacts up to Maven central repo. It’s a mostly straightforward process, but I hit a few bumps along the way so thought I’d capture them here.</p>
+
+<p>First, my dev setup is a bit unusual: I run Windows 7 in a Parallels VM on top of an old MacBook Pro. The MBP has an SSD and 8Gb RAM, so the performance is good enough for me, and - even though I really dislike the MacOS UI, it is comforting to know that I have native Unix environment to jump back to.</p>
+
+<p>In my Win7 VM, I use github’s fork of msysgit as my shell; in other words, Unix on top of Windows on top of Unix. Yeah, a bit weird, it works for me.</p>
+
+<p>Anyway, back to the point. To deploy these repositories into Maven, I used Sonatype’s OSS service. This has a well written <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide">user guide</a>, so I won’t repeat all the details here. A few things to note though:</p>
+
+<ul>
+  <li>
+    <p>per <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-3.CreateaJIRAticket">step 3 of the guide</a>, I created JIRA tickets for all my repositories, because the Maven groupId of their POMs are different. They are, however, all grouped under com.danhaywood. The Sonatype guy closed all of these bar one, and changed the groupId to just com.danhaywood. So, if you have a similar setup, just specify a top-level groupId corresponding to your domain name</p>
+  </li>
+  <li>
+    <p>per <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7a.3.StageaRelease">step 5</a>, I created a new gpg signing key. I do actually have one of these as an Apache committer, but decided it would be wrong to reuse this key for my own projects. But I did reuse the <a href="http://isis.apache.org/contributors/key-generation.html">process to create a key</a>, as documented on the Apache Isis website. I also uploaded this key to the pgp.mit.edu key server (<code>gpg --send-keys --keyserver pgp.mit.edu nnnnnnnn</code>), and it seemed to sync automatically to the server (<code>hkp://pool.sks-keyservers.net/</code>) that OSS Sonatype uses</p>
+  </li>
+  <li>
+    <p>per <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-6.CentralSyncRequirement">step 6</a>, I updated my POMs to be parented by the sonatype parent POM, and added in the missing SCM entry, license and other tags. Because I use github’s <a href="https://gitcredentialstore.codeplex.com/">windows credentials helper</a>, I used the <code>https://</code> connection URL rather than the SSH git: URL that is <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7a.1.POMandsettingsconfig">suggested in the guide</a>.</p>
+  </li>
+  <li>
+    <p>Also in the <code>pom.xml</code>, I added in plugin definitions for <code>maven-source-plugin</code> and <code>maven-javadoc-plugin</code> (to generate the <code>-source.jar</code> and <code>-javadoc.jar</code> JARs), and updated the <code>maven-jar-plugin</code> configuration (to generate a <code>-test.jar</code>). You can see an example pom.xml for one of my projects <a href="https://github.com/danhaywood/java-testsupport/blob/49b9236dba82abb303f125245cfc49059745685c/pom.xml">here</a>.</p>
+  </li>
+  <li>
+    <p>per <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7a.2.PublishSnapshots">step 7a2</a>, I did a trial deploy of my snapshots using mvn clean deploy. This “just worked”, no mucking about.</p>
+  </li>
+  <li>
+    <p>per <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-7a.3.StageaRelease">step 7a3</a>, I then moved onto performing an actual release, using <code>mvn release:clean release:prepare</code>, followed by <code>mvn release:perform</code>.  For the simple projects (not Maven multi-modules), eg <a href="https://github.com/danhaywood/java-testsupport">java-testsupport</a> and <a href="https://github.com/danhaywood/isis-wicket-excel">isis-wicket-excel</a>, this also “just worked”.</p>
+  </li>
+  <li>
+    <p>After uploading the artifacts, I logged onto the staging repositories tab of the <a href="https://oss.sonatype.org/index.html#stagingRepositories">Sonatype OSS Nexus</a>, and closed and staged the repos.   Again <a href="https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-9.ActivateCentralSync">as documented</a> in the guide, after I released the first artifact I updated the JIRA ticket I had raised, and Sonatype setup automatic syncing.  A couple of hours later, as promised, my first artifacts <a href="http://search.maven.org/#search%7Cga%7C1%7Cdanhaywood">appeared on Maven Central Repo</a>.</p>
+  </li>
+</ul>
+
+<p>So far so very good.  However, things started going wrong when I tried to release my Maven multi-module projects (<a href="https://github.com/danhaywood/isis-wicket-gmap3">isis-wicket-gmap3</a> and <a href="https://github.com/danhaywood/isis-wicket-wickedcharts">isis-wicket-wickedcharts</a>).  The issue I hit was an error in git-add: “C:...\applib\pom.xml is outside repository”.  Other’s have been here before me, most notably <a href="https://jira.codehaus.org/browse/SCM-667">SCM-667</a> and <a href="http://jira.codehaus.org/browse/MRELEASE-581">MRELEASE-581</a>.  Although the first issue says it is fixed, the second is not.  A patch submitted by Mark Struberg (one of Apache Isis’ mentors while in the incubator) doesn’t seem to have been applied.</p>
+
+<p>Some googling around found others still complaining of the problem, too.  The workaround suggested on <a href="http://gibaholms.wordpress.com/category/java/maven/">this blog post</a> (to use cmd.exe rather than msysgit), didn’t work for me.  Nor did a similar suggestion to carefully ensure that the drive letter was uppercased (<code>C:\...</code>) rather than the lowercase default (<code>c:\...</code>).</p>
+
+<p>So, I decided it was time to fallback to my native Mac OS… after all, most of these tools are developed on *nix, and the issue I was hitting was clearly Windows related.  Of course, what that meant was configuring my Mac environment.</p>
+
+<p>First thing I did was to setup the Mac OS equivalent of the windows-credential-store utility.  According to <a href="https://help.github.com/articles/set-up-git#platform-mac">this page</a> on github, this is built into git 1.7.x and beyond, by running git credential-osxkeychain.  However, when I ran this I got a segfault (signal 11).  I said my MBP is quite old … I haven’t upgraded from Snow Leopard (OSX 10.6).  So I could imagine some sort of issue here.  Once more others have been here before, so I did what is suggested in this <a href="http://stackoverflow.com/questions/14272634/error-git-credential-osxkeychain-died-of-signal-11">stackoverflow question</a>, and downloaded and installed an update of the git-credential-osxkeychain helper (as per the <a href="https://help.github.com/articles/set-up-git#platform-mac">github page</a> again).  W00t! that sorted out that issue.</p>
+
+<p>Next thing I did was to download Atlassian’s <a href="http://www.sourcetreeapp.com/">SourceTree</a>.  On Windows SourceTree is unusably slow, but on MacBook it seems quite fast enough.  And installing it got me an updated version of git on my <code>$PATH</code>.  I then cloned my two troublesome github repos onto my MacBook.  I pushed a dummy update to one of them in order that my github credentials would be stored.</p>
+
+<p>Next thing was to install <code>gpg</code> on my MacBook.  I downloaded from <a href="https://gpgtools.org/installer/index.html">gpgtools.org</a> and installed; that got me gpg on my $PATH.  Back on my Win7 VM, I exported my secret key, using <code>gpg --export-secret-key NNNNNNNN &gt; NNNNNNNN.secret.asc</code>, and then imported into my MacBook’s store using the gpgtool’s UI (GPG Keychain Access).</p>
+
+<p>After all that palava, it was, once more, time to attempt the <code>mvn clean release:prepare</code>, <code>mvn release:perform</code>.  And you know what?  This time it worked.  Double w00t!</p>
+
+<p>So, after reading all that, if you are stuck on Windows and hit the same git-add issue, my suggestion would be to do the release on *nix.  For example, use something like <a href="https://www.virtualbox.org/">VirtualBox</a> to run up a <a href="http://www.ubuntu.com/">Ubuntu</a> VM, and just use it for doing the releases.  A bit clunky, but should get you there.</p>
+
+<p>And finally: my thanks to Sonatype for offering the OSS staging service.  I guess it’s in their interest to drive adoption of Maven; even so, it’s pretty cool that they offer it for free.  Also, it didn’t take anywhere like 2 business days for my JIRA tickets to be approved… more like a couple of hours.</p>
+
+<hr />
+
+<p><strong>UPDATE</strong>: since I wrote this blog post, SourceTree on Windows has improved substantially and is generally fast enough for every-day use.</p>
+
+        </div>
+
+        <span class="date">July 11, 2013</span>
+
+        <span class="category">
+            <a href="/tags/github/">github</a>
+            
+            <a href="/tags/how-to/">how-to</a>
+            
+            <a href="/tags/maven/">maven</a>
+            </span>
+
+
+    </article>
+
+
+    <div class="social module color-4">
+        <ul>
+
+            
+
+            
+
+            
+            
+                
+            
+                
+            
+                
+            
+
+            <li class="fb">
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Deploying artifacts to Maven central repo&u=/2013/07/11/deploying-artifacts-to-maven-central-repo/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Deploying artifacts to Maven central repo&url=/2013/07/11/deploying-artifacts-to-maven-central-repo/&via=dkhaywood&hashtags=github,how-to,maven,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2013/07/11/deploying-artifacts-to-maven-central-repo/">Google+</a></li>
+        </ul>
+
+    </div>
+
+    
+
+<div class="module color-3">
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'danhaywood';
+
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

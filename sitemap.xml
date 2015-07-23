@@ -105,7 +105,35 @@
 </url>
 
 <url>
+    <loc>http://www.danhaywood.com/2013/07/11/deploying-artifacts-to-maven-central-repo/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/05/13/restore-nuget-packages-from-packages-config/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/04/29/eclipse-tips-more-refactorings-and-a-bit-of-common-sense/</loc>
+</url>
+
+<url>
     <loc>http://www.danhaywood.com/2013/04/26/welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/03/30/eclipse-tips-using-the-source-menu/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/03/23/eclipse-tips-quick-fix-to-generate-code/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/03/16/eclipse-tips-extract-local-variable/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/02/13/articles-on-sd-journal/</loc>
 </url>
 
 <url>
@@ -118,6 +146,18 @@
 
 <url>
     <loc>http://www.danhaywood.com/2013/01/24/apache-isis-release-v1-0-0/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/01/16/apache-isis-sourcemoves-to-git/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2013/01/12/apache-isis-graduates-as-a-top-level-apache-project-gets-a-new-website/</loc>
+</url>
+
+<url>
+    <loc>http://www.danhaywood.com/2011/12/20/db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules/</loc>
 </url>
 
 <url>
@@ -188,7 +228,19 @@
 
 
 <url>
+    <loc>http://www.danhaywood.com/tags/powershell/</loc>
+</url>
+
+
+
+<url>
     <loc>http://www.danhaywood.com/tags/postgres/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/nuget/</loc>
 </url>
 
 
