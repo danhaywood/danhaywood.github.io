@@ -7,7 +7,7 @@ slug: using-google-guavas-ordering-api
 title: Using Google Guava's Ordering API
 wordpress_id: 1088
 tags:
-- apache isis
+- apache-isis
 - guava
 - java
 ---

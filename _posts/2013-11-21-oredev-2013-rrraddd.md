@@ -7,7 +7,7 @@ slug: oredev-2013-rrraddd
 title: Oredev 2013 - RRRADDD!
 wordpress_id: 1224
 tags:
-- apache isis
+- apache-isis
 - conference
 - github
 ---

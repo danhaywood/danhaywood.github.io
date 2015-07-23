@@ -10,7 +10,6 @@ tags:
 - eclipse
 - how-to
 - java
-- refactorings
 - screencast
 - tdd
 ---
@@ -21,4 +20,4 @@ Well, I guess I have used Eclipse for over 10 years now, so I suppose I am reaso
 
 The first one in the series is nice and simple: the "Extract Local Variable" refactoring, and its corollary, "Inline Variable"; something I use an awful lot when working on [Apache Isis](http://isis.apache.org) codebase.  You'll find it just below...
 
-[youtube http://www.youtube.com/watch?v=VHI70vXoOnc&w=560&h=315]
+<iframe width="640" height="360" src="https://www.youtube.com/embed/VHI70vXoOnc" frameborder="0" allowfullscreen></iframe>

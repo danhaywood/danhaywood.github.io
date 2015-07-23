@@ -8,7 +8,7 @@ title: Apache Isis graduates as a top-level Apache project, gets a new website
 wordpress_id: 1072
 tags:
 - announce
-- apache isis
+- apache-isis
 - asf
 ---
 

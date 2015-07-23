@@ -7,7 +7,6 @@ slug: db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules
 title: DB unit testing with dbUnit, JSON, HSQLDB and JUnit Rules
 wordpress_id: 867
 tags:
-- dbunit
 - java
 - junit
 - tdd
@@ -15,11 +14,10 @@ tags:
 
 In this week's run of my TDD course, I thought it would be interesting to write a little fixture to make it easier to use [dbUnit](http://www.dbunit.org/).  My original thought was just to teach dbUnit about JSON, but it turns out that [Lieven Doclo](http://www.insaneprogramming.be/?p=105) has done that already.  So I decided to go a step further and also combine dbUnit with [JUnit Rules](http://kentbeck.github.com/junit/javadoc/latest/org/junit/rules/MethodRule.html), and provide automatic bootstrapping of an [HSQLDB](http://hsqldb.org/) in-memory object store.
 
-<!-- more -->
 
 The following test shows what I ended up with:
 
-[sourcecode language="java"]
+<pre>
 package com.danhaywood.tdd.dbunit.test;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -46,7 +44,7 @@ public class DbUnitRuleExample {
             DbUnitRuleExample.class, jdbcDriver.class,
             "jdbc:hsqldb:file:src/test/resources/testdb", "SA", "");
 
-@Ddl("customer.ddl")
+    @Ddl("customer.ddl")
     @JsonData("customer.json")
     @Test
     public void update_lastName() throws Exception {
@@ -67,11 +65,11 @@ public class DbUnitRuleExample {
         Assertion.assertEquals(expectedTable, actualTable);
     }
 }
-[/sourcecode]
+</pre>
 
-where customer.ddl is:
+where `customer.ddl` is:
 
-[sourcecode language="sql"]
+<pre>
 drop table customer if exists;
 create table customer (
 	id         int         not null primary key
@@ -79,14 +77,13 @@ create table customer (
    ,initial    varchar(1)  null
    ,last_name  varchar(30) not null
 )
-[/sourcecode]
+</pre>
 
-and customer.json (the initial data set) is:
+and `customer.json` (the initial data set) is:
 
-[sourcecode language="javascript"]
+<pre>
 {
-  "customer":
-	  [
+  "customer": [
 	    {
 	      "id": 1,
 	      "first_name": "John",
@@ -98,16 +95,15 @@ and customer.json (the initial data set) is:
 	      "first_name": "Mary",
 	      "last_name": "Jones"
 	    }
-	  ]
+  ]
 }
-[/sourcecode]
+</pre>
 
-and customer-updated.json (the final data set) is:
+and `customer-updated.json` (the final data set) is:
 
-[sourcecode language="javascript"]
+<pre>
 {
-  "customer":
-	  [
+  "customer": [
 	    {
 	      "id": 1,
 	      "first_name": "John",
@@ -121,13 +117,13 @@ and customer-updated.json (the final data set) is:
 	    }
 	  ]
 }
-[/sourcecode]
+</pre>
 
-As you've probably figured out, the @Ddl annotation optionally specifies DDL script(s) to run against the database, while the @JsonData defines a JSON-formatted dataset.
+As you've probably figured out, the `@Ddl` annotation optionally specifies DDL script(s) to run against the database, while the @JsonData defines a JSON-formatted dataset.
 
-The actual implementation of the DbUnitRule class is:
+The actual implementation of the `DbUnitRule` class is:
 
-[sourcecode language="java"]
+<pre>
 package com.danhaywood.tdd.dbunit;
 
 import java.lang.annotation.ElementType;
@@ -239,11 +235,11 @@ public class DbUnitRule implements MethodRule {
         return dbUnitConnection.createQueryTable(string, string2);
     }
 }
-[/sourcecode]
+</pre>
 
-This uses Lieven Doclo's JSONDataSet (copied here for your convenience):
+This uses Lieven Doclo's `JSONDataSet` (copied here for your convenience):
 
-[sourcecode language="java"]
+<pre>
 import org.codehaus.jackson.map.ObjectMapper;
 import org.dbunit.dataset.*;
 import org.dbunit.dataset.datatype.DataType;
@@ -426,29 +422,15 @@ public class JSONDataSet extends AbstractDataSet {
         }
     }
 }
-[/sourcecode]
+</pre>
 
 The libraries I used for this (ie are dependencies) are:
 
-
-
-	
   * hsqldb 2.2.6
-
-	
   * dbunit 2.4.8
-
-	
   * jackson 1.9.3
-
-	
   * slf4j-api-1.6.4, slf4j-nop-1.6.4
-
-	
   * google-guava 10.0.1
-
-	
   * junit 4.8
-
 
 As ever, comments welcome.

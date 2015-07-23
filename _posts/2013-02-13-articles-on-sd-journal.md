@@ -7,8 +7,7 @@ slug: articles-on-sd-journal
 title: Articles on SD Journal
 wordpress_id: 1102
 tags:
-- apache isis
-- article
+- apache-isis
 ---
 
 I've just written a couple of articles on Apache Isis, published by the Software Developers Journal.  You can download the journal for free [here](http://sdjournal.org/software-developers-journal-open-012013-2/).

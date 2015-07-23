@@ -7,7 +7,7 @@ slug: apache-isis-sourcemoves-to-git
 title: Apache Isis source moves to Git
 wordpress_id: 1075
 tags:
-- apache isis
+- apache-isis
 - git
 ---
 

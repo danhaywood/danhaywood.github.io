@@ -7,8 +7,8 @@ slug: apache-isis-now-has-shiro-integration-for-security
 title: Apache Isis now has Shiro integration for security
 wordpress_id: 1085
 tags:
-- apache isis
-- apache shiro
+- apache-isis
+- apache-shiro
 - java
 ---
 

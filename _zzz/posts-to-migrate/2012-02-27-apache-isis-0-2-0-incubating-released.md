@@ -7,8 +7,8 @@ slug: apache-isis-0-2-0-incubating-released
 title: Apache Isis 0.2.0-incubating released
 wordpress_id: 928
 tags:
-- apache isis
-- domain driven design
+- apache-isis
+- ddd
 ---
 
 Just a quick announcement that last week we put out our second release of [Apache Isis](http://incubator.apache.org/isis) from the incubator, namely 0.2.0-incubating.

@@ -17,4 +17,4 @@ Everyone knows - or at least suspects - that most of the Eclipse goodies live un
 
 In this quick tip, I'm using another example from my [little]({{ site.baseurl }}/2011/12/20/db-unit-testing-with-dbunit-json-hsqldb-and-junit-rules/) [Java]({{ site.baseurl }}/2011/12/17/jmock-2-6-junit-rules-and-automocking-using-an-mock-annotation/) [TDD]({{ site.baseurl }}/2010/11/04/contract-test-for-value-types/) course, demonstrating how to quickly write an immutable value type using a bunch of those Source menu items.
 
-[youtube http://www.youtube.com/watch?v=Ld2Rij0qhy8&w=560&h=315]
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Ld2Rij0qhy8" frameborder="0" allowfullscreen></iframe>

@@ -7,7 +7,7 @@ slug: apache-isis-enters-the-incubator
 title: Apache Isis enters the incubator!
 wordpress_id: 671
 tags:
-- apache isis
+- apache-isis
 - asf
 ---
 

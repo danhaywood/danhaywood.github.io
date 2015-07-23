@@ -16,8 +16,6 @@ A little while back I did a [couple]({{ site.baseurl }}/2012/04/04/updating-visu
 
 A similar requirement is to update a package to its latest version, across all projects.  Here's how:
 
-<!-- more -->
-
 [sourcecode language="powershell"]
 function Update-Package-All([string]$PackageId) {
   get-project -all | %{

@@ -7,9 +7,9 @@ slug: responsibilities-of-the-application-layer-in-domain-driven-applications
 title: Responsibilities of the Application Layer in Domain-Driven Applications
 wordpress_id: 1030
 tags:
-- apache isis
-- domain driven design
-- naked objects
+- apache-isis
+- ddd
+- naked-objects
 ---
 
 

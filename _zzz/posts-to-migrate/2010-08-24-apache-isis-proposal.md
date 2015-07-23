@@ -7,7 +7,7 @@ slug: apache-isis-proposal
 title: Apache Isis Proposal
 wordpress_id: 661
 tags:
-- apache isis
+- apache-isis
 ---
 
 Over the last few months we've been seriously considering donating both the original Naked Objects framework as well as my sister projects to the Apache Software Foundation, sounding out various people and gauging interest.  Today we formally announced a proposal for a new project to be accepted into the Apache incubator.  The name we're proposing for this combined project is Apache Isis.

@@ -7,7 +7,7 @@ slug: enums-and-pluggable-strategies
 title: Enums and Pluggable Strategies
 wordpress_id: 552
 tags:
-- apache isis
+- apache-isis
 ---
 
 Last time round we simplified an entity inheritance hierarchy, moving the polymorphism into anonymous subclasses of a Java 5 enum.  Which is great, but if there's a lot of business logic that's been factored out in this way, it can make the enum itself somewhat unmanageable.  Moreover, we can't easily extend or modify its behaviour without opening up the enum class, modifying it and recompiling.

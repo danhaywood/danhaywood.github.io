@@ -7,7 +7,7 @@ slug: restful-objects
 title: Restful Objects
 wordpress_id: 796
 tags:
-- apache isis
+- apache-isis
 - restful objects
 ---
 

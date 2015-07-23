@@ -7,7 +7,7 @@ slug: apache-isis-0-1-2-incubating-released
 title: Apache Isis 0.1.2 (incubating) Released
 wordpress_id: 790
 tags:
-- apache isis
+- apache-isis
 ---
 
 Finally... after 5 (count them) release candidates, and a pretty steep [learning curve](http://incubator.apache.org/isis/docbkx/html/guide/ch10.html), last week we finally released the first release of [Apache Isis](http://incubator.apache.org/isis) out of the [ASF incubator](http://incubator.apache.org/).

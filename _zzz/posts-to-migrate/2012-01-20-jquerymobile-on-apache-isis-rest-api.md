@@ -7,9 +7,9 @@ slug: jquerymobile-on-apache-isis-rest-api
 title: JQueryMobile on the Apache Isis' REST API
 wordpress_id: 888
 tags:
-- apache isis
+- apache-isis
 - jquerymobile
-- restful objects
+- restful-objects
 ---
 
 We're currently working towards 0.2.0 of [Apache Isis](http://incubator.apache.org/isis) (incubating), and one of the most significant new areas of functionality is the REST API that it automatically provides through the json-viewer component.  As you can probably guess from the name, this viewer provides a REST interface which exposes JSON representations of the domain object models.

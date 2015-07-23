@@ -7,7 +7,7 @@ slug: apache-isis-codebase-refactored-adopting-semantic-versioning
 title: Apache Isis codebase refactored, adopting semantic versioning
 wordpress_id: 1078
 tags:
-- apache isis
+- apache-isis
 - java
 - semver
 ---

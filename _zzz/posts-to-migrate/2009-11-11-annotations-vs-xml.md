@@ -7,7 +7,7 @@ slug: annotations-vs-xml
 title: Annotations vs XML
 wordpress_id: 406
 tags:
-- apache isis
+- apache-isis
 ---
 
 For me, the best innovation on the Java platform (and .NET too) in recent years has the introduction of annotations/attributes.  But not everyone thinks so, even now.

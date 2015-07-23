@@ -7,9 +7,9 @@ slug: jquerymobile-demo-app-walkthr
 title: JQueryMobile demo app walk-thru
 wordpress_id: 900
 tags:
-- apache isis
+- apache-isis
 - jquerymobile
-- restful objects
+- restful-objects
 ---
 
 In the [previous post]({{ site.baseurl }}/2012/01/20/jquerymobile-on-apache-isis-rest-api/) I showed some screenshots of the simple [JQueryMobile](http://jquerymobile.com) app that is hosted by the [Apache Isis](http://incubator.apache.org/isis)' [online demo](http://mmyco.co.uk:8180/isis-onlinedemo) app, demonstrating one way of using the built-in [Restful API](http://restfulobjects.org). In this post, I want to look at the JQueryMobile code in a little more detail.

@@ -8,7 +8,7 @@ slug: apache-code-retreat-2011
 title: Apache Code Retreat, 2011
 wordpress_id: 783
 tags:
-- apache isis
+- apache-isis
 ---
 
 Hmm, it's high time I did another post, so this one's just to mention that I'm going to be attending the [Apache Code Retreat](http://sites.google.com/site/apacheretreatknockree/) this weekend, looking forward to meeting face-to-face some of the other [Apache Isis](http://incubator.apache.org/isis) committers for the first time.  The retreat also includes an open-to-all unconference on the Saturday.
