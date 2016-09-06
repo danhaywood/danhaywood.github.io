@@ -43,7 +43,7 @@ git add -A .
 
 if [ -n "$(git status --porcelain)" ]; then 
   git commit -a -m "Travis build $TRAVIS_BUILD_NUMBER"
-  git push --quiet origin master > /dev/null 2>&1
+  git push origin master > /dev/null 2>&1
 else 
   echo "... no changes to commit";
 fi
