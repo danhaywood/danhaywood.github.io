@@ -7,7 +7,7 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
-                <title>Jekyll, github and asciidoc - oh my!</title>
+                <title>Jekyll Github Asciidoc Oh My</title>
                 <dc:creator></dc:creator>
                 
                     <description>Having used Wordpress to host my blog for the last few years, I thought it was time to get in with the cool kids and instead host my blog on github pages, using Jekyll.</description>

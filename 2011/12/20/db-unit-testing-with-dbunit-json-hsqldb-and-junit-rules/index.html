@@ -48,8 +48,8 @@
             </span>
             <div class="profiles">
                 <a href="https://github.com/danhaywood" title="Github profile" target="_blank">github</a>
-                <a href="https://www.youtube.com/user//TheDanHaywood" title="Youtube channel" target="_blank">Youtube</a>
-                <a href="uk.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
+                <a href="https://www.youtube.com/user/TheDanHaywood" title="Youtube channel" target="_blank">Youtube</a>
+                <a href="https://gb.linkedin.com/in/dkhaywood" title="Profile in LinkedIn" target="_blank">LinkedIn</a>
                 <a href="https://twitter.com/dkhaywood" title="Twitter posts" target="_blank">twitter</a>
                 <a href="https://plus.google.com/+DanHaywood" title="Profile in Google+" target="_blank">Google+</a>
                 <a href="/feed.xml" title="Suscribe to RSS" target="_blank">rss</a>
@@ -561,7 +561,7 @@ public class JSONDataSet extends AbstractDataSet {
     private JSONITableParser tableParser = new JSONITableParser();
 
     // The tables after parsing
-    private List<itable> tables;
+    private List<ITable> tables;
 
     /**
      * Creates a JSON dataset based on a file
@@ -594,7 +594,7 @@ public class JSONDataSet extends AbstractDataSet {
          * @param jsonFile A JSON dataset file
          * @return A list of DBUnit tables
          */
-        public List<itable> getTables(File jsonFile) {
+        public List<ITable> getTables(File jsonFile) {
             try {
                 return getTables(new FileInputStream(jsonFile));
             } catch (IOException e) {
@@ -609,8 +609,8 @@ public class JSONDataSet extends AbstractDataSet {
          * @return A list of DBUnit tables
          */
         @SuppressWarnings("unchecked")
-        public List<itable> getTables(InputStream jsonStream) {
-            List<itable> tables = new ArrayList<itable>();
+        public List<ITable> getTables(InputStream jsonStream) {
+            List<ITable> tables = new ArrayList<ITable>();
             try {
                 // get the base object tree from the JSON stream
                 Map&lt;String, Object&gt; dataset = mapper.readValue(jsonStream, Map.class);
@@ -643,14 +643,14 @@ public class JSONDataSet extends AbstractDataSet {
          * @return The table metadata for the table
          */
         private ITableMetaData getMetaData(String tableName, List&lt;Map&lt;String, Object&gt;&gt; rows) {
-            Set<string> columns = new LinkedHashSet<string>();
+            Set<String> columns = new LinkedHashSet<String>();
             // iterate through the dataset and add the column names to a set
             for (Map&lt;String, Object&gt; row : rows) {
                 for (Map.Entry&lt;String, Object&gt; column : row.entrySet()) {
                     columns.add(column.getKey());
                 }
             }
-            List<column> list = new ArrayList<column>(columns.size());
+            List<Column> list = new ArrayList<Column>(columns.size());
             // create a list of DBUnit columns based on the column name set
             for (String s : columns) {
                 list.add(new Column(s, DataType.UNKNOWN));
@@ -678,7 +678,7 @@ public class JSONDataSet extends AbstractDataSet {
         }
     }
 }
-
+&lt;/pre&gt;
 
 The libraries I used for this (ie are dependencies) are:
 
@@ -690,7 +690,7 @@ The libraries I used for this (ie are dependencies) are:
   * junit 4.8
 
 As ever, comments welcome.
-</column></column></string></string></itable></itable></itable></itable></itable></pre>
+</Column></Column></String></String></ITable></ITable></ITable></ITable></ITable></pre>
 
         </div>
 
