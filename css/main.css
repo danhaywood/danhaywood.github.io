@@ -107,7 +107,7 @@ article .content p a:active {
 /*    line-height: 1.7;*/
     line-height: 1.5;
     text-align: center;
-    width: 35%;
+    width: 30%;
 }
 
 .main-header h1 {
@@ -171,7 +171,7 @@ article .content p a:active {
 .main-content {
     float: right;
     padding: 0;
-    width: 65%;
+    width: 70%;
 }
 
 .main-content .content a {
@@ -245,6 +245,11 @@ hr {
 .main-content .module.post {
     padding-bottom: 2.5em;
 }
+.main-content article.module {
+  padding: 0.8em;
+}
+
+
 
 .module img {
     height: auto;
