@@ -7,6 +7,17 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Maven Mixins</title>
+                <dc:creator></dc:creator>
+                
+                    <description>While I'm a fan of Maven, it is true that the pom.xml files can become a little unwieldy.  Since Maven 4.0 (with long hoped-for mixins) still seems to be a way off, I decided to create some maven mixins using the maven-mixin-plugin.</description>
+                
+                            <pubDate>Thu, 24 Nov 2016 00:00:00 +0000</pubDate>
+                <link>/2016/11/24/maven-mixins/</link>
+                <guid isPermaLink="true">/2016/11/24/maven-mixins/</guid>
+            </item>
+        
+            <item>
                 <title>Jekyll Github Asciidoc Oh My</title>
                 <dc:creator></dc:creator>
                 
@@ -115,17 +126,6 @@
                             <pubDate>Fri, 22 Aug 2014 10:35:26 +0000</pubDate>
                 <link>/2014/08/22/how-to-restore-a-postgresql-backup/</link>
                 <guid isPermaLink="true">/2014/08/22/how-to-restore-a-postgresql-backup/</guid>
-            </item>
-        
-            <item>
-                <title>[ANN] Apache Isis version 1.6.0 Released</title>
-                <dc:creator></dc:creator>
-                
-                    <description>Apache Isis 1.6.0 has been released, including new and improved event bus stuff to decouple business logic within the apps, and a new companion www.isisaddons.org for housing third-party modules.</description>
-                
-                            <pubDate>Mon, 28 Jul 2014 17:50:34 +0000</pubDate>
-                <link>/2014/07/28/ann-apache-isis-version-1-6-0-released/</link>
-                <guid isPermaLink="true">/2014/07/28/ann-apache-isis-version-1-6-0-released/</guid>
             </item>
         
     </channel>

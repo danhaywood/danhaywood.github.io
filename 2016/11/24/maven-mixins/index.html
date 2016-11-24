@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-         Restore NuGet packages from packages.config
+         Maven Mixins
         
     </title>
 
@@ -255,55 +255,153 @@
          
           <span class="previous-link">
             <i class="fa fa-step-backward"></i>
-            <a rel="prev" href="/2013/04/29/eclipse-tips-more-refactorings-and-a-bit-of-common-sense/">Previous</a>
+            <a rel="prev" href="/2015/07/15/jekyll-github-asciidoc-oh-my/">Previous</a>
           </span>
         
-         
-          <span class="next-link" style="float:right;">
-            <a rel="next" href="/2013/07/11/deploying-artifacts-to-maven-central-repo/">Next</a>
-            <i class="fa fa-step-forward"></i>
-          </span>
         
         </div>
 
-        <h1>Restore NuGet packages from packages.config</h1>
+        <h1>Maven Mixins</h1>
 
 
         <hr>
 
 
         <div class="content">
-        <p>Another in my <a href="/2013/04/24/updating-a-nuget-package-across-all-projects-in-visual-studio/">occasional</a> <a href="/2012/04/04/updating-visual-studio-project-references-from-nuget-packages-config-2/">series</a> of wrangling with NuGet within Visual Studio.</p>
-
-<p>This one is to restore all packages from a packages.config file:</p>
-
-<pre>
-  function Restore-Packages() {
-    $proj = get-project
-    get-package -project $proj.name | % {
-      Write-Host $_.id;
-      uninstall-package -projectname $proj.name -id $_.id -version $_.version -RemoveDependencies -force ;
-      install-package -projectname $proj.name -id $_.id -version $_.version
-    }
-  }
-</pre>
-
-<p>To use, first edit the packages.config as you require. Then, in the Package Manager Console in VS (in the ‘default project’ dropdown set correctly), just type:</p>
-
-<p>[sourcecode language=”powershell”]
-Restore-Packages
-[/sourcecode]</p>
-
-<p>Enjoy.</p>
-
+        <div class="paragraph">
+<p>While I&#8217;m generally a fan of <a href="http://maven.apache.org">Maven</a>, it is true that the <code>pom.xml</code> files can become a little unwieldy.
+Since Maven 4.0 (with <a href="https://issues.apache.org/jira/browse/MNG-5102">long hoped-for</a> mixins) still seems to be a way off, I decided to create some maven mixins using Ohad David&#8217;s <a href="https://github.com/odavid/maven-plugins/blob/master/mixin-maven-plugin/README.md">maven-mixin-plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve ended up with the following maven mixins:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Module</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Applicable for&#8230;&#8203;</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-staticanalysis">static analysis</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin providing the ability to run various static analysis plugins (checkstyle, pmd, findbugs, javancss, jdepend)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-cucumberreporting">cucumber reporting</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin that configures cucumber reporting plugin for BDD specs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application that uses <a href="http://cucumber.io">Cucumber</a> BDD specs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-datanucleusenhance">datanucleus enhance</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A maven mixin that provides datanucleus:enhance plugin (for JDO entities of DN modules)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for Java applications that use <a href="http://datanucleus.org">DataNucleus</a> for persistence (including, of course, <a href="http://isis.apache.org">Apache Isis</a> applications).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-enforcerrelaxed">enforcer relaxed</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin that applies the maven enforcer plugin (but with relaxed dependency convergence)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-isisjrebel">isis jrebel</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin providing the ability to run an Apache Isis application under JRebel.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications only; requires a JRebel license.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-isisswagger">isis swagger</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin providing the ability to run isis:swagger goal for an Apache Isis domain application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications that use the Restful Objects viewer to automatically expose a REST API.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-isisvalidate">isis validate</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configures the Apache Isis maven plugin to run the validate goal for a domain object model.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-jettyconsole">jetty console</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin to configure jetty-console plugin (to create a standalone version of a webapp)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java <em>web</em> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-jettywar">jetty war</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin to package up a webapp as a WAR file, and to allow the webapp to be run using the jetty maven plugin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java <em>web</em> application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-sourceandjavadoc">source and javadoc</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin providing the ability to run source, javadoc and jxr plugins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-standard">standard</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven mixin for the "standard" set of plugins.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavenmixin-surefire">surefire</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration to run surefire plugin for unit, integration and (<a href="http://cucumber.io">Cucumber</a>) BDD specs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for any Java application.  Uses naming conventions to distinguish between different types of tests</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>While I was at it, I also created some modules to aggregate together common Maven dependencies:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Module</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Applicable for&#8230;&#8203;</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavendeps-isiswebapp">isis webapp</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convenience maven pom to aggregate maven dependencies for running Apache Isis webapps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications only.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavendeps-isisintellij">isis intellij</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convenience maven pom for running Apache Isis applications from within IntelliJ IDE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications only.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="https://github.com/danhaywood/java-mavendeps-isistesting">isis testing</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Convenience maven pom to aggregate maven dependencies for testing Apache Isis applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Applicable for <a href="http://isis.apache.org">Apache Isis</a> applications only.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>See the README for each of the corresponding git repos for details on how to configure.</p>
+</div>
         </div>
 
-        <span class="date">May 13, 2013</span>
+        <span class="date">November 24, 2016</span>
 
         <span class="category">
-            <a href="/tags/nuget/">nuget</a>
+            <a href="/tags/maven/">maven</a>
             
-            <a href="/tags/powershell/">powershell</a>
+            <a href="/tags/apache-isis/">apache-isis</a>
+            
+            <a href="/tags/modular/">modular</a>
             </span>
 
 
@@ -323,11 +421,13 @@ Restore-Packages
             
                 
             
+                
+            
 
             <li class="fb">
-            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Restore NuGet packages from packages.config&u=/2013/05/13/restore-nuget-packages-from-packages-config/">Facebook</a></li>
-            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Restore NuGet packages from packages.config&url=/2013/05/13/restore-nuget-packages-from-packages-config/&via=dkhaywood&hashtags=nuget,powershell,">Twitter</a></li>
-            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2013/05/13/restore-nuget-packages-from-packages-config/">Google+</a></li>
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Maven Mixins&u=/2016/11/24/maven-mixins/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Maven Mixins&url=/2016/11/24/maven-mixins/&via=dkhaywood&hashtags=maven,apache-isis,modular,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2016/11/24/maven-mixins/">Google+</a></li>
         </ul>
 
     </div>
