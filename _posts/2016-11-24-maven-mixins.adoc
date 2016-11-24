@@ -1,0 +1,110 @@
+---
+tags:
+
+- maven
+- apache-isis
+- modular
+
+excerpt: While I'm a fan of Maven, it is true that the pom.xml files can become a little unwieldy.  Since Maven 4.0 (with long hoped-for mixins) still seems to be a way off, I decided to create some maven mixins using the maven-mixin-plugin.
+---
+
+:title: Maven mixins for Apache Isis and generally
+:slug: maven-mixins-for-apache-isis-and-generally
+:author: danhaywood
+:comments: true
+:date: 2016-11-24 12:40
+:layout: post
+
+
+While I'm generally a fan of link:http://maven.apache.org[Maven], it is true that the `pom.xml` files can become a little unwieldy.
+Since Maven 4.0 (with link:https://issues.apache.org/jira/browse/MNG-5102[long hoped-for] mixins) still seems to be a way off, I decided to create some maven mixins using Ohad David's link:https://github.com/odavid/maven-plugins/blob/master/mixin-maven-plugin/README.md[maven-mixin-plugin].
+
+I've ended up with the following maven mixins:
+
+
+[width="100%",options="header,footer",cols="^1,2,2"]
+|====================
+|Module
+|Description
+|Applicable for...
+
+|https://github.com/danhaywood/java-mavenmixin-cucumberreporting[cucumber reporting]
+|Maven mixin that configures cucumber reporting plugin for BDD specs.
+|Applicable for any Java application that uses http://cucumber.io[Cucumber] BDD specs
+
+|https://github.com/danhaywood/java-mavenmixin-datanucleusenhance[datanucleus enhance]
+|A maven mixin that provides datanucleus:enhance plugin (for JDO entities of DN modules)
+|Applicable for Java applications that use http://datanucleus.org[DataNucleus] for persistence (including, of course, http://isis.apache.org[Apache Isis] applications).
+
+|https://github.com/danhaywood/java-mavenmixin-enforcerrelaxed[enforcer relaxed]
+|Maven mixin that applies the maven enforcer plugin (but with relaxed dependency convergence) 
+|Applicable for any Java application.
+
+|https://github.com/danhaywood/java-mavenmixin-isisjrebel[isis jrebel]
+|Maven mixin providing the ability to run an Apache Isis application under JRebel.
+|Applicable for http://isis.apache.org[Apache Isis] applications only; requires a JRebel license.
+
+|https://github.com/danhaywood/java-mavenmixin-isisswagger[isis swagger]
+|Maven mixin providing the ability to run isis:swagger goal for an Apache Isis domain application
+|Applicable for http://isis.apache.org[Apache Isis] applications that use the Restful Objects viewer to automatically expose a REST API.
+
+|https://github.com/danhaywood/java-mavenmixin-isisvalidate[isis validate]
+|Configures the Apache Isis maven plugin to run the validate goal for a domain object model. 
+|Applicable for http://isis.apache.org[Apache Isis] applications only.
+
+|https://github.com/danhaywood/java-mavenmixin-jettyconsole[jetty console]
+|Maven mixin to configure jetty-console plugin (to create a standalone version of a webapp)
+|Applicable for any Java _web_ application.
+
+|https://github.com/danhaywood/java-mavenmixin-jettywar[jetty war]
+|Maven mixin to package up a webapp as a WAR file, and to allow the webapp to be run using the jetty maven plugin
+|Applicable for any Java _web_ application.
+
+|https://github.com/danhaywood/java-mavenmixin-sourceandjavadoc[source and javadoc]
+|Maven mixin providing the ability to run source, javadoc and jxr plugins
+|Applicable for any Java application.
+
+|https://github.com/danhaywood/java-mavenmixin-standard[standard]
+|Maven mixin for the "standard" set of plugins.
+|Applicable for any Java application.
+
+|https://github.com/danhaywood/java-mavenmixin-surefire[surefire]
+|Configuration to run surefire plugin for unit, integration and (http://cucumber.io[Cucumber]) BDD specs.
+|Applicable for any Java application.  Uses naming conventions to distinguish between different types of tests
+
+|https://github.com/danhaywood/java-mavenmixin-staticanalysis[static analysis]
+|Maven mixin providing the ability to run various static analysis plugins (checkstyle, pmd, findbugs, javancss, jdepend)
+|Applicable for any Java application.
+
+|====================
+
+
+
+
+While I was at it, I also created some modules to aggregate together common Maven dependencies:
+
+
+[width="100%",options="header,footer",cols="^1,2,2"]
+|====================
+|Module
+|Description
+|Applicable for...
+
+
+|https://github.com/danhaywood/java-mavendeps-isisintellij[isis intellij]
+|Convenience maven pom for running Apache Isis applications from within IntelliJ IDE
+|Applicable for http://isis.apache.org[Apache Isis] applications only.
+
+|https://github.com/danhaywood/java-mavendeps-isistesting[isis testing]
+|Convenience maven pom to aggregate maven dependencies for testing Apache Isis applications
+|Applicable for http://isis.apache.org[Apache Isis] applications only.
+
+
+|https://github.com/danhaywood/java-mavendeps-isiswebapp[isis webapp]
+|Convenience maven pom to aggregate maven dependencies for running Apache Isis webapps
+|Applicable for http://isis.apache.org[Apache Isis] applications only.
+
+|====================
+
+
+See the README for each of the corresponding git repos for details on how to configure.
