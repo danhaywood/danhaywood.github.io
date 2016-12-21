@@ -7,6 +7,17 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Lightsail And Docker</title>
+                <dc:creator></dc:creator>
+                
+                    <description>A quick blog describing how to run an Apache Isis application on docker on top of Amazon Lightsail.</description>
+                
+                            <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+                <link>/2016/12/21/lightsail-and-docker/</link>
+                <guid isPermaLink="true">/2016/12/21/lightsail-and-docker/</guid>
+            </item>
+        
+            <item>
                 <title>Maven Mixins</title>
                 <dc:creator></dc:creator>
                 
@@ -113,19 +124,6 @@
                             <pubDate>Tue, 23 Sep 2014 06:32:29 +0000</pubDate>
                 <link>/2014/09/23/configuring-apache-isis-security-module-add-on/</link>
                 <guid isPermaLink="true">/2014/09/23/configuring-apache-isis-security-module-add-on/</guid>
-            </item>
-        
-            <item>
-                <title>How to restore a PostgreSQL backup</title>
-                <dc:creator></dc:creator>
-                
-                    <description>There would seem to be several ways, but if the backup file was created by pg_dump and is actually a series of DDL and INSERT statements, then use:
-
-</description>
-                
-                            <pubDate>Fri, 22 Aug 2014 10:35:26 +0000</pubDate>
-                <link>/2014/08/22/how-to-restore-a-postgresql-backup/</link>
-                <guid isPermaLink="true">/2014/08/22/how-to-restore-a-postgresql-backup/</guid>
             </item>
         
     </channel>

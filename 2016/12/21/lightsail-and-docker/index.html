@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-         Welcoming Maurizio Taverna as a new committer to Apache Isis
+         Lightsail And Docker
         
     </title>
 
@@ -263,44 +263,140 @@
          
           <span class="previous-link">
             <i class="fa fa-step-backward"></i>
-            <a rel="prev" href="/2013/03/30/eclipse-tips-using-the-source-menu/">Previous</a>
+            <a rel="prev" href="/2016/11/24/maven-mixins/">Previous</a>
           </span>
         
-         
-          <span class="next-link" style="float:right;">
-            <a rel="next" href="/2013/04/29/eclipse-tips-more-refactorings-and-a-bit-of-common-sense/">Next</a>
-            <i class="fa fa-step-forward"></i>
-          </span>
         
         </div>
 
-        <h1>Welcoming Maurizio Taverna as a new committer to Apache Isis</h1>
+        <h1>Lightsail And Docker</h1>
 
 
         <hr>
 
 
         <div class="content">
-        <p>I’m delighted to announce that Maurizio Taverna has been voted in as a committer on <a href="http://isis.apache.org">Apache Isis</a>.</p>
-
-<p>Maurizio came across Isis at the beginning of the year, and since then has been working rapidly and enthusiastically to develop a new viewer using DHTMLX. Although (because of licensing restrictions) this codebase cannot be donated to Isis, it’s a substantial and impressive piece of work. If you’ve not seen it yet, there’s an <a href="http://isis-viewer-dhtmlx.appspot.com/">online demo here</a> and the <a href="https://github.com/madytyoo/dhtmlx-isis-viewer">code is on github</a>.</p>
-
-<p>Maurizio has also demonstrated the viewer as an app running on Google App Engine (the demo above is running on GAE). To do this he has identified and addressed several improvements; these have been fed back to a few changes to the JDO objectstore component, as well as new documentation on our website.</p>
-
-<p>Maurizio has also had several ideas to help publicise and promote Isis, including a series of animated interviews (a draft of the first of which can be seen <a href="https://docs.google.com/file/d/0B-Ekm92XLvTAN25ZNzNyYjI1eE0/edit?usp=sharing">here</a>).</p>
-
-<p>I’d personally like to thank Maurizio for all his hard work so far, and to say that I’m very much looking forward to working with him and gaining from his experience in the future.</p>
-
+        <div class="paragraph">
+<p>As <a href="http://incode.org">Incode Software</a> we&#8217;ve been starting to "dockerize" our applications, and with the advent of <a href="https://lightsail.aws.amazon.com/">Amazon Lightsail</a> I thought I&#8217;d quickly try to put it all together.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s the steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sign up for Lightsail</p>
+</li>
+<li>
+<p>set up ssh</p>
+<div class="ulist">
+<ul>
+<li>
+<p>from the Lightsail account page, create a private key, and download the <code>.pem</code> file</p>
+</li>
+<li>
+<p>using puttygen (or similar) load the <code>.pem</code> file then <code>Conversions &gt; Export OpenSSH key</code> to create the <code>id_rsa</code> file</p>
+</li>
+<li>
+<p>copy <code>id_rsa</code> to <code>~/.ssh</code> and <code>chmod +400 ~/.ssh/id_rsa</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>create an instance</p>
+<div class="ulist">
+<ul>
+<li>
+<p>base OS: Ubuntu 16.04</p>
+</li>
+<li>
+<p>(as per <a href="https://davekz.com/docker-on-lightsail/">this blog post</a>), specify this launch script:<br></p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+             --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+echo &quot;deb https://apt.dockerproject.org/repo ubuntu-xenial main&quot; | \
+             sudo tee /etc/apt/sources.list.d/docker.list
+sudo apt-get update
+sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+sudo apt-get install -y docker-engine
+sudo service docker start</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>specify the ssh key pair created in previous step</p>
+</li>
+<li>
+<p>specify instance plan ()$5 a month may well suffice)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>create a static IP address and assign to the instance</p>
+</li>
+<li>
+<p>start the instance</p>
+</li>
+<li>
+<p>(optionally), restart the instance (because  of changes required after</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Next:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh into the instance, eg:<br></p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">ssh ubuntu@34.194.220.87</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>run up postgres backend (already uploaded to dockerhub):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo docker run --name postgres -d incodehq/postgres</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://hub.docker.com/r/incodehq/postgres/">dockerhub/incodehq/postgres</a> image is built using the <code>Dockerfile</code> from <a href="https://github.com/incodehq/docker-postgres">github/incodehq/docker-postgres</a>.</p>
+</div>
+</li>
+<li>
+<p>run up the example isis app (already uploaded to dockerhub):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo docker run --name isis-app-dockertest --link postgres:db -e ISIS_OPTS=&quot;isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq&quot; -p 80:8080 -d incodehq/isis-app-dockertest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="https://hub.docker.com/r/incodehq/isis-app-dockertest/">dockerhub/incodehq/isis-app-dockertest</a> image is built using the <code>Dockerfile</code> from <a href="https://github.com/incodehq/docker-isis-app-dockertest">github/incodehq/docker-isis-app-dockertest</a>, which in turn has a copy of the WAR file as built from <a href="https://github.com/isisaddons/isis-app-dockertest">github/isisaddons/isis-app-dockertest</a> app.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The app is exposed on port 80, so you should be able to access the app from a browser, eg: <a href="http://34.194.220.87">http://34.194.220.87</a></p>
+</div>
         </div>
 
-        <span class="date">April 26, 2013</span>
+        <span class="date">December 21, 2016</span>
 
         <span class="category">
+            <a href="/tags/lightsail/">lightsail</a>
+            
+            <a href="/tags/docker/">docker</a>
+            
             <a href="/tags/apache-isis/">apache-isis</a>
-            
-            <a href="/tags/announce/">announce</a>
-            
-            <a href="/tags/java/">java</a>
             </span>
 
 
@@ -324,9 +420,9 @@
             
 
             <li class="fb">
-            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Welcoming Maurizio Taverna as a new committer to Apache Isis&u=/2013/04/26/welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis/">Facebook</a></li>
-            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Welcoming Maurizio Taverna as a new committer to Apache Isis&url=/2013/04/26/welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis/&via=dkhaywood&hashtags=apache-isis,announce,java,">Twitter</a></li>
-            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2013/04/26/welcoming-maurizio-taverna-as-a-new-committer-to-apache-isis/">Google+</a></li>
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Lightsail And Docker&u=/2016/12/21/lightsail-and-docker/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Lightsail And Docker&url=/2016/12/21/lightsail-and-docker/&via=dkhaywood&hashtags=lightsail,docker,apache-isis,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2016/12/21/lightsail-and-docker/">Google+</a></li>
         </ul>
 
     </div>

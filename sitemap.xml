@@ -5,6 +5,10 @@
     </url>
 
 <url>
+    <loc>http://www.danhaywood.com/2016/12/21/lightsail-and-docker/</loc>
+</url>
+
+<url>
     <loc>http://www.danhaywood.com/2016/11/24/maven-mixins/</loc>
 </url>
 
@@ -208,31 +212,13 @@
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/announce/</loc>
+    <loc>http://www.danhaywood.com/tags/tdd/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/conference/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/rx/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/isisaddons/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/javascript/</loc>
+    <loc>http://www.danhaywood.com/tags/jmock/</loc>
 </url>
 
 
@@ -244,115 +230,19 @@
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/nuget/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/ci/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/book-review/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/neo4j/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/github/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/restful-objects/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/i18n/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/maven/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/git/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/naked-objects/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/eclipse/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/tdd/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/intellij/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/junit/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/how-to/</loc>
-</url>
-
-
-
-<url>
     <loc>http://www.danhaywood.com/tags/assertj/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/powershell/</loc>
+    <loc>http://www.danhaywood.com/tags/isisaddons/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/ddd/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/screencast/</loc>
+    <loc>http://www.danhaywood.com/tags/postgres/</loc>
 </url>
 
 
@@ -364,13 +254,97 @@
 
 
 <url>
+    <loc>http://www.danhaywood.com/tags/javascript/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/asf/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/apache-shiro/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/eclipse/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/i18n/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/naked-objects/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/neo4j/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/powershell/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/angular/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/conference/</loc>
+</url>
+
+
+
+<url>
     <loc>http://www.danhaywood.com/tags/mockito/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/apache-wicket/</loc>
+    <loc>http://www.danhaywood.com/tags/nuget/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/how-to/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/java/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/hamcrest/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/screencast/</loc>
 </url>
 
 
@@ -382,13 +356,25 @@
 
 
 <url>
+    <loc>http://www.danhaywood.com/tags/apache-wicket/</loc>
+</url>
+
+
+
+<url>
     <loc>http://www.danhaywood.com/tags/jekyll/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/hamcrest/</loc>
+    <loc>http://www.danhaywood.com/tags/gmap3/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/github/</loc>
 </url>
 
 
@@ -406,25 +392,49 @@
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/apache-shiro/</loc>
-</url>
-
-
-
-<url>
     <loc>http://www.danhaywood.com/tags/asciidoc/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/jmock/</loc>
+    <loc>http://www.danhaywood.com/tags/maven/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/asf/</loc>
+    <loc>http://www.danhaywood.com/tags/intellij/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/book-review/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/restful-objects/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/announce/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/ddd/</loc>
+</url>
+
+
+
+<url>
+    <loc>http://www.danhaywood.com/tags/rx/</loc>
 </url>
 
 
@@ -436,25 +446,19 @@
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/angular/</loc>
+    <loc>http://www.danhaywood.com/tags/ci/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/postgres/</loc>
+    <loc>http://www.danhaywood.com/tags/git/</loc>
 </url>
 
 
 
 <url>
-    <loc>http://www.danhaywood.com/tags/java/</loc>
-</url>
-
-
-
-<url>
-    <loc>http://www.danhaywood.com/tags/gmap3/</loc>
+    <loc>http://www.danhaywood.com/tags/junit/</loc>
 </url>
 
 
