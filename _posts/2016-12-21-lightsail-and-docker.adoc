@@ -1,0 +1,92 @@
+---
+tags:
+
+- lightsail
+- docker
+- apache-isis
+
+excerpt: A quick blog describing how to run an Apache Isis application on docker on top of Amazon Lightsail.
+---
+
+:title: Amazon Lightsail, Docker and Apache Isis
+:slug: amazon-lightsail-docker-and-apache-isis
+:author: danhaywood
+:comments: true
+:date: 2016-12-20 15:29
+:layout: post
+
+
+As link:http://incode.org[Incode Software] we've been starting to "dockerize" our applications, and with the advent of https://lightsail.aws.amazon.com/[Amazon Lightsail] I thought I'd quickly try to put it all together.
+
+Here's the steps:
+
+* Sign up for Lightsail
+
+* set up ssh
+** from the Lightsail account page, create a private key, and download the `.pem` file
+** using puttygen (or similar) load the `.pem` file then `Conversions > Export OpenSSH key` to create the `id_rsa` file
+** copy `id_rsa` to `~/.ssh` and `chmod +400 ~/.ssh/id_rsa`
+
+* create an instance
+
+** base OS: Ubuntu 16.04
+
+** (as per link:https://davekz.com/docker-on-lightsail/[this blog post]), specify this launch script: +
++
+[source,bash]
+----
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 \
+             --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+echo "deb https://apt.dockerproject.org/repo ubuntu-xenial main" | \
+             sudo tee /etc/apt/sources.list.d/docker.list
+sudo apt-get update
+sudo apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+sudo apt-get install -y docker-engine
+sudo service docker start
+----
+
+** specify the ssh key pair created in previous step
+
+** specify instance plan ()$5 a month may well suffice)
+
+* create a static IP address and assign to the instance
+
+* start the instance
+
+* (optionally), restart the instance (because  of changes required after 
+
+Next:
+
+* ssh into the instance, eg: +
++
+[source,bash]
+----
+ssh ubuntu@34.194.220.87
+----
+
+* run up postgres backend (already uploaded to dockerhub):
++
+[source,bash]
+----
+sudo docker run --name postgres -d incodehq/postgres
+----
++
+The link:https://hub.docker.com/r/incodehq/postgres/[dockerhub/incodehq/postgres] image is built using the `Dockerfile` from link:https://github.com/incodehq/docker-postgres[github/incodehq/docker-postgres].
+
+
+* run up the example isis app (already uploaded to dockerhub):
++
+[source,bash]
+----
+sudo docker run --name isis-app-dockertest --link postgres:db -e ISIS_OPTS="isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq" -p 80:8080 -d incodehq/isis-app-dockertest
+----
++
+The link:https://hub.docker.com/r/incodehq/isis-app-dockertest/[dockerhub/incodehq/isis-app-dockertest] image is built using the `Dockerfile` from link:https://github.com/incodehq/docker-isis-app-dockertest[github/incodehq/docker-isis-app-dockertest], which in turn has a copy of the WAR file as built from https://github.com/isisaddons/isis-app-dockertest[github/isisaddons/isis-app-dockertest] app.
+
+
+The app is exposed on port 80, so you should be able to access the app from a browser, eg: http://34.194.220.87[http://34.194.220.87]
+
+
+
