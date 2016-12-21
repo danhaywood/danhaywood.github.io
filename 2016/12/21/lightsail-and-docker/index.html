@@ -331,7 +331,7 @@ sudo service docker start</code></pre>
 <p>specify the ssh key pair created in previous step</p>
 </li>
 <li>
-<p>specify instance plan ()$5 a month may well suffice)</p>
+<p>specify instance plan ($5 a month may well suffice)</p>
 </li>
 </ul>
 </div>
@@ -343,7 +343,7 @@ sudo service docker start</code></pre>
 <p>start the instance</p>
 </li>
 <li>
-<p>(optionally), restart the instance (because  of changes required after</p>
+<p>(optionally), restart the instance (because of changes required after all that startup stuff).</p>
 </li>
 </ul>
 </div>
@@ -375,7 +375,18 @@ sudo service docker start</code></pre>
 <p>run up the example isis app (already uploaded to dockerhub):</p>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">sudo docker run --name isis-app-dockertest --link postgres:db -e ISIS_OPTS=&quot;isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq&quot; -p 80:8080 -d incodehq/isis-app-dockertest</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">ISIS_OPTS=&quot;&quot;
+ISIS_OPTS=$ISIS_OPTS+&quot;isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver&quot;
+ISIS_OPTS=$ISIS_OPTS+&quot;||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq&quot;
+ISIS_OPTS=$ISIS_OPTS+&quot;||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq&quot;
+ISIS_OPTS=$ISIS_OPTS+&quot;||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq&quot;
+
+sudo docker run                          \
+        --name isis-app-dockertest       \
+        --link postgres:db               \
+        -e ISIS_OPTS=$ISIS_OPTS          \
+        -p 80:8080                       \
+        -d incodehq/isis-app-dockertest</code></pre>
 </div>
 </div>
 <div class="paragraph">
