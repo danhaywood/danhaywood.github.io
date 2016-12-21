@@ -49,13 +49,13 @@ sudo service docker start
 
 ** specify the ssh key pair created in previous step
 
-** specify instance plan ()$5 a month may well suffice)
+** specify instance plan ($5 a month may well suffice)
 
 * create a static IP address and assign to the instance
 
 * start the instance
 
-* (optionally), restart the instance (because  of changes required after 
+* (optionally), restart the instance (because of changes required after all that startup stuff).
 
 Next:
 
@@ -80,7 +80,18 @@ The link:https://hub.docker.com/r/incodehq/postgres/[dockerhub/incodehq/postgres
 +
 [source,bash]
 ----
-sudo docker run --name isis-app-dockertest --link postgres:db -e ISIS_OPTS="isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq" -p 80:8080 -d incodehq/isis-app-dockertest
+ISIS_OPTS=""
+ISIS_OPTS=$ISIS_OPTS+"isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionDriverName=org.postgresql.Driver"
+ISIS_OPTS=$ISIS_OPTS+"||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionURL=jdbc:postgresql://db:5432/incodehq"
+ISIS_OPTS=$ISIS_OPTS+"||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionUserName=incodehq"
+ISIS_OPTS=$ISIS_OPTS+"||isis.persistor.datanucleus.impl.javax.jdo.option.ConnectionPassword=incodehq"
+
+sudo docker run                          \
+        --name isis-app-dockertest       \
+        --link postgres:db               \
+        -e ISIS_OPTS=$ISIS_OPTS          \
+        -p 80:8080                       \
+        -d incodehq/isis-app-dockertest
 ----
 +
 The link:https://hub.docker.com/r/incodehq/isis-app-dockertest/[dockerhub/incodehq/isis-app-dockertest] image is built using the `Dockerfile` from link:https://github.com/incodehq/docker-isis-app-dockertest[github/incodehq/docker-isis-app-dockertest], which in turn has a copy of the WAR file as built from https://github.com/isisaddons/isis-app-dockertest[github/isisaddons/isis-app-dockertest] app.
