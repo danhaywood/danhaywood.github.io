@@ -7,10 +7,21 @@
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
         
             <item>
+                <title>Hyperv Vagrant And Docker</title>
+                <dc:creator></dc:creator>
+                
+                    <description>How to set up Vagrant with Hyper-V in order to run docker.</description>
+                
+                            <pubDate>Thu, 22 Dec 2016 00:00:00 +0000</pubDate>
+                <link>/2016/12/22/hyperv-vagrant-and-docker/</link>
+                <guid isPermaLink="true">/2016/12/22/hyperv-vagrant-and-docker/</guid>
+            </item>
+        
+            <item>
                 <title>Lightsail And Docker</title>
                 <dc:creator></dc:creator>
                 
-                    <description>A quick blog describing how to run an Apache Isis application on docker on top of Amazon Lightsail.</description>
+                    <description>A quick blog post describing how to run an Apache Isis application on docker on top of Amazon Lightsail.</description>
                 
                             <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
                 <link>/2016/12/21/lightsail-and-docker/</link>
@@ -113,17 +124,6 @@
                             <pubDate>Thu, 25 Sep 2014 08:30:53 +0000</pubDate>
                 <link>/2014/09/25/configuring-apache-isis-command-profiling-and-auditing-module-add-ons/</link>
                 <guid isPermaLink="true">/2014/09/25/configuring-apache-isis-command-profiling-and-auditing-module-add-ons/</guid>
-            </item>
-        
-            <item>
-                <title>Configuring Apache Isis&#39; Security Module Add-on</title>
-                <dc:creator></dc:creator>
-                
-                    <description>I recently completed a new security module that handles both authentication and authorization for Isis apps. </description>
-                
-                            <pubDate>Tue, 23 Sep 2014 06:32:29 +0000</pubDate>
-                <link>/2014/09/23/configuring-apache-isis-security-module-add-on/</link>
-                <guid isPermaLink="true">/2014/09/23/configuring-apache-isis-security-module-add-on/</guid>
             </item>
         
     </channel>

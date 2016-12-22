@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-         [ANN] Apache Isis 1.4.0 released
+         Hyperv Vagrant And Docker
         
     </title>
 
@@ -271,77 +271,265 @@
          
           <span class="previous-link">
             <i class="fa fa-step-backward"></i>
-            <a rel="prev" href="/2014/01/23/isis-integration-with-jrebel/">Previous</a>
+            <a rel="prev" href="/2016/12/21/lightsail-and-docker/">Previous</a>
           </span>
         
-         
-          <span class="next-link" style="float:right;">
-            <a rel="next" href="/2014/03/26/still-a-place-for-books/">Next</a>
-            <i class="fa fa-step-forward"></i>
-          </span>
         
         </div>
 
-        <h1>[ANN] Apache Isis 1.4.0 released</h1>
+        <h1>Hyperv Vagrant And Docker</h1>
 
 
         <hr>
 
 
         <div class="content">
-        <p>After 4 months development, we’ve just released <a href="http://isis.apache.org">Apache Isis</a> 1.4.0, and supporting components.</p>
+        <div class="paragraph">
+<p>Trying to use the <a href="https://github.com/spotify/docker-maven-plugin">Spotify maven docker</a> plugin led me to needing a Docker host accessible from the Windows box I use for deveopment.</p>
+</div>
+<div class="paragraph">
+<p>An initial attempt to just use Microsoft&#8217;s Windows Containers, as described <a href="https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10">here</a>, didn&#8217;t work: although I ended up with a <code>docker</code> client, attempting to run a Centos image such as <a href="https://hub.docker.com/r/incodehq/tomcat/">this Tomcat image</a> failed.
+The error I got was that Windows Containers cannot run non-Windows images.</p>
+</div>
+<div class="paragraph">
+<p>It&#8217;s possible that using regular <a href="https://docs.docker.com/docker-for-windows/faqs/">Docker for Windows</a> (rather than Windows Containers) might work; still need to investigate that possibility.</p>
+</div>
+<div class="paragraph">
+<p>In the meantime though I decided to go a different way and install Vagrant using Hyper-V to host a Ubuntu image, then run Docker within that Hyper-V image.</p>
+</div>
+<div class="paragraph">
+<p>This guidance based on information in <a href="https://lewiswalsh.com/node-on-ubuntu-on-vagrant-on-hyperv/">this post</a>, <a href="https://followkman.com/2016/07/27/vagrant-up-on-windows-10-with-hyper-v/">this post</a> and others.</p>
+</div>
+<div class="sect1">
+<h2 id="install_vagrant">Install Vagrant</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Download the installer from <a href="https://www.vagrantup.com/downloads.html">https://www.vagrantup.com/downloads.html</a>, and run.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="enable_hyper_v">Enable Hyper-V</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enable either through the UI:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/media/enable_role_upd.png" alt="enable role upd">
+</div>
+</div>
+<div class="paragraph">
+<p>or using Powershell:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure_an_external_hyper_v_network_switch">Configure an External Hyper-V network switch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open <strong>Hyper-V Manager</strong>, then <strong>Virtual Switch Manager&#8230;&#8203;</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/virtual-switch-manager.png" alt="virtual switch manager">
+</div>
+</div>
+<div class="paragraph">
+<p>Then create a new External virtual switch, eg:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/external-virtual-switch.png" alt="external virtual switch">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="environment_variable">Environment Variable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a Powershell session (as Administrator) in that directory, and type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">$env.VAGRANT_DEFAULT_PROVIDER=hyperv
+[Environment]::SetEnvironmentVariable(&quot;VAGRANT_DEFAULT_PROVIDER&quot;, $env.VAGRANT_DEFAULT_PROVIDER, [EnvironmentVariableTarget]::Machine)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vagrantfile">VagrantFile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a directory <code>c:\vagrant\machines\dockerhost</code>, and in that directory create this <code>VagrantFile</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="ini">Vagrant.configure(&quot;2&quot;) do |config|
+  config.vm.box = &quot;hashicorp/precise64&quot;
+  config.vm.provider &quot;hyperv&quot;
 
-<p>This is a pretty cool release, because it’s the one that <a href="http://github.com/estatio/estatio">Estatio</a> (the first major application to run on Isis) has been deployed against.</p>
+  config.vm.network &quot;public_network&quot;
 
-<p>Some of the features in this release include:</p>
+  config.vm.provider &quot;hyperv&quot; do |vb|
+     vb.memory = &quot;4096&quot;
+  end
 
-<ul>
-  <li>further support in <code>layout.json</code> files for additional facets and UI hints</li>
-  <li>better reporting of metamodel validation errors (including a new page in Wicket viewer)</li>
-  <li>improved support for bulk update</li>
-  <li><code>@javax.enterprise.context.RequestScoped</code> for request-scoped services</li>
-  <li><code>QueryResultsCache</code> request-scoped domain service (for performance tuning)</li>
-  <li>new <code>MementoService</code> to support view models</li>
-  <li>new request-scoped <code>@Bulk.InteractionontextService</code> for standardized co-ordination between bulk action invocations</li>
-  <li><code>Scratchpad</code> request-scoped domain service (for adhoc coordination between actions, eg bulk action invocations)</li>
-  <li><code>Command</code>, <code>CommandContext</code>, <code>BackgroundCommandService</code>, for profiling and background task support</li>
-  <li>improvements to JDO implementations of auditing and publishing services, to integrate closely with the new command/backgroundCommand services</li>
-  <li>improved support for running arbitrary Isis jobs via a scheduler</li>
-  <li>supporting methods (<code>disableXxx</code>, <code>validateXxx</code>) for contributed actions/associations now supported</li>
-  <li>services autowired prior to <code>@PostConstruct</code>, and Isis session present for service initialization</li>
-  <li>JRebel support (JRebel plugin itself is third-party, see Isis website for details)</li>
-</ul>
+  config.vm.provision &quot;docker&quot;,
+      images: [&quot;ubuntu&quot;]
+end</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create_the_machine">Create the Machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a Powershell session (as Administrator) in that directory, and type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">vagrant up</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">Bringing machine 'default' up with 'hyperv' provider...
+==&gt; default: Verifying Hyper-V is enabled...
+==&gt; default: Configured startup memory is 4096
+==&gt; default: Importing a Hyper-V instance
+    default: Please choose a switch to attach to your Hyper-V instance.
+    default: If none of these are appropriate, please open the Hyper-V manager
+    default: to create a new virtual switch.
+    default:
+    default: 1) nat
+    default: 2) ExternalVirtualSwitch
+    default:
+    default: What switch would you like to use? 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Select the external virtual switch created earlier.</p>
+</div>
+<div class="paragraph">
+<p>The bootstrapping continues:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">    default: What switch would you like to use? 2
+    default: Cloning virtual hard drive...
+    default: Creating and registering the VM...
+    default: Successfully imported a VM with name: precise64
+==&gt; default: Starting the machine...
+==&gt; default: Waiting for the machine to report its IP address...
+    default: Timeout: 120 seconds
+    default: IP: 10.0.0.25
+==&gt; default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 10.0.0.25:22
+    default: SSH username: vagrant
+    default: SSH auth method: password
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==&gt; default: Machine booted and ready!
+==&gt; default: Preparing SMB shared folders...
+    default: You will be asked for the username and password to use for the SMB
+    default: folders shortly. Please use the proper username/password of your
+    default: Windows account.
+    default:
+    default: Username: dan@haywood-associates.co.uk
+    default: Password (will be hidden):</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enter username and password.</p>
+</div>
+<div class="paragraph">
+<p>The bootstrapping then completes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">==&gt; default: Mounting SMB shared folders...
+    default: C:/vagrant/machines/dockerhost =&gt; /vagrant
+==&gt; default: Running provisioner: docker...
+    default: Installing Docker onto machine...</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accessing_the_machine">Accessing the Machine</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It should then be possible to log in:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">vagrant ssh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>resulting in:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.11.0-15-generic x86_64)
 
-<p>In the Wicket viewer, major changes/improvements include:</p>
+ * Documentation:  https://help.ubuntu.com/
+Last login: Thu Mar  6 09:02:28 2014</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can then run docker, eg:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">docker version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>resulting in:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="cmdline">Client:
+ Version:      1.12.5
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   7392c3b
+ Built:        Fri Dec 16 02:23:22 2016
+ OS/Arch:      linux/amd64
 
-<ul>
-  <li>show action dialogs in a modal dialog, rather than new page</li>
-  <li>limit number of bookmarks, make less easier to accidentally trip, show/hide with keyboard shortcut</li>
-  <li>improved IE9 support, bundle CSS files</li>
-  <li>simplify URLs in Wicket viewer</li>
-  <li>actions returning URL open new browser window</li>
-  <li>UI sorting/ordering hints, pop-up to copy to clipboard</li>
-  <li>breadcrumb drop-down to easily revisit previous page</li>
-  <li>upper/lower case now switchable</li>
-  <li>standalone tables now rendered according to runtime type, not compile-time type</li>
-  <li>better tooltips over icon/titles</li>
-</ul>
-
-<p>Full release notes are available on the Isis website.</p>
-
-
+Server:
+ Version:      1.12.5
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   7392c3b
+ Built:        Fri Dec 16 02:23:22 2016
+ OS/Arch:      linux/amd64</code></pre>
+</div>
+</div>
+</div>
+</div>
         </div>
 
-        <span class="date">March 14, 2014</span>
+        <span class="date">December 22, 2016</span>
 
         <span class="category">
-            <a href="/tags/announce/">announce</a>
+            <a href="/tags/hyperv/">hyperv</a>
             
-            <a href="/tags/apache-isis/">apache-isis</a>
+            <a href="/tags/docker/">docker</a>
             
-            <a href="/tags/restful-objects/">restful-objects</a>
-            
-            <a href="/tags/apache-wicket/">apache-wicket</a>
+            <a href="/tags/vagrant/">vagrant</a>
             </span>
 
 
@@ -363,13 +551,11 @@
             
                 
             
-                
-            
 
             <li class="fb">
-            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=[ANN] Apache Isis 1.4.0 released&u=/2014/03/14/isis-1-4-0-released/">Facebook</a></li>
-            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=[ANN] Apache Isis 1.4.0 released&url=/2014/03/14/isis-1-4-0-released/&via=dkhaywood&hashtags=announce,apache-isis,restful-objects,apache-wicket,">Twitter</a></li>
-            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2014/03/14/isis-1-4-0-released/">Google+</a></li>
+            <a target="_blank" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?t=Hyperv Vagrant And Docker&u=/2016/12/22/hyperv-vagrant-and-docker/">Facebook</a></li>
+            <li class="tw"><a target="_blank" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Hyperv Vagrant And Docker&url=/2016/12/22/hyperv-vagrant-and-docker/&via=dkhaywood&hashtags=hyperv,docker,vagrant,">Twitter</a></li>
+            <li class="gp"><a target="_blank" title="Share on Google+" href="https://plus.google.com/share?url=/2016/12/22/hyperv-vagrant-and-docker/">Google+</a></li>
         </ul>
 
     </div>
