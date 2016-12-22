@@ -1,0 +1,210 @@
+---
+tags:
+
+- hyperv
+- docker
+- vagrant
+
+excerpt: How to set up Vagrant with Hyper-V in order to run docker.
+---
+
+:title: Hyper-V, Vagrant and Docker
+:slug: hyperv-vagrant-and-docker
+:author: danhaywood
+:comments: true
+:date: 2016-12-21 09:48
+:layout: post
+
+
+Trying to use the https://github.com/spotify/docker-maven-plugin[Spotify maven docker] plugin led me to needing a Docker host accessible from the Windows box I use for deveopment.
+
+An initial attempt to just use Microsoft's Windows Containers, as described link:https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10[here], didn't work: although I ended up with a `docker` client, attempting to run a Centos image such as link:https://hub.docker.com/r/incodehq/tomcat/[this Tomcat image] failed.
+The error I got was that Windows Containers cannot run non-Windows images.
+
+It's possible that using regular link:https://docs.docker.com/docker-for-windows/faqs/[Docker for Windows] (rather than Windows Containers) might work; still need to investigate that possibility.
+
+In the meantime though I decided to go a different way and install Vagrant using Hyper-V to host a Ubuntu image, then run Docker within that Hyper-V image.
+
+This guidance based on information in link:https://lewiswalsh.com/node-on-ubuntu-on-vagrant-on-hyperv/[this post], link:https://followkman.com/2016/07/27/vagrant-up-on-windows-10-with-hyper-v/[this post] and others.
+
+
+
+== Install Vagrant
+
+Download the installer from https://www.vagrantup.com/downloads.html[https://www.vagrantup.com/downloads.html], and run.
+
+
+== Enable Hyper-V
+
+Enable either through the UI:
+
+image::https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/media/enable_role_upd.png[]
+
+or using Powershell:
+
+[source,powershell]
+----
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+----
+
+== Configure an External Hyper-V network switch
+
+Open **Hyper-V Manager**, then **Virtual Switch Manager...**
+  
+image::images/virtual-switch-manager.png[]
+
+Then create a new External virtual switch, eg:
+
+image::images/external-virtual-switch.png[]
+
+
+== Environment Variable
+
+Open a Powershell session (as Administrator) in that directory, and type:
+
+[source,cmdline]
+----
+$env.VAGRANT_DEFAULT_PROVIDER=hyperv
+[Environment]::SetEnvironmentVariable("VAGRANT_DEFAULT_PROVIDER", $env.VAGRANT_DEFAULT_PROVIDER, [EnvironmentVariableTarget]::Machine)
+----
+
+
+== VagrantFile
+
+Create a directory `c:\vagrant\machines\dockerhost`, and in that directory create this `VagrantFile`:
+
+[source,ini]
+----
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/precise64"
+  config.vm.provider "hyperv"
+
+  config.vm.network "public_network"
+
+  config.vm.provider "hyperv" do |vb|
+     vb.memory = "4096"
+  end
+  
+  config.vm.provision "docker",
+      images: ["ubuntu"]
+end
+----
+
+== Create the Machine
+
+Open a Powershell session (as Administrator) in that directory, and type:
+
+[source,cmdline]
+----
+vagrant up
+----
+
+[source,cmdline]
+----
+Bringing machine 'default' up with 'hyperv' provider...
+==> default: Verifying Hyper-V is enabled...
+==> default: Configured startup memory is 4096
+==> default: Importing a Hyper-V instance
+    default: Please choose a switch to attach to your Hyper-V instance.
+    default: If none of these are appropriate, please open the Hyper-V manager
+    default: to create a new virtual switch.
+    default:
+    default: 1) nat
+    default: 2) ExternalVirtualSwitch
+    default:
+    default: What switch would you like to use? 2
+----
+
+Select the external virtual switch created earlier.
+
+The bootstrapping continues:
+
+[source,cmdline]
+----
+    default: What switch would you like to use? 2
+    default: Cloning virtual hard drive...
+    default: Creating and registering the VM...
+    default: Successfully imported a VM with name: precise64
+==> default: Starting the machine...
+==> default: Waiting for the machine to report its IP address...
+    default: Timeout: 120 seconds
+    default: IP: 10.0.0.25
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 10.0.0.25:22
+    default: SSH username: vagrant
+    default: SSH auth method: password
+    default:
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Preparing SMB shared folders...
+    default: You will be asked for the username and password to use for the SMB
+    default: folders shortly. Please use the proper username/password of your
+    default: Windows account.
+    default:
+    default: Username: dan@haywood-associates.co.uk
+    default: Password (will be hidden):
+----
+
+Enter username and password.
+
+The bootstrapping then completes:
+
+[source,cmdline]
+----
+==> default: Mounting SMB shared folders...
+    default: C:/vagrant/machines/dockerhost => /vagrant
+==> default: Running provisioner: docker...
+    default: Installing Docker onto machine...
+----
+
+
+== Accessing the Machine
+
+It should then be possible to log in:
+
+[source,cmdline]
+----
+vagrant ssh
+----
+
+resulting in:
+
+[source,cmdline]
+----
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.11.0-15-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com/
+Last login: Thu Mar  6 09:02:28 2014
+----
+
+You can then run docker, eg:
+
+[source,cmdline]
+----
+docker version
+----
+
+resulting in:
+
+[source,cmdline]
+----
+Client:
+ Version:      1.12.5
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   7392c3b
+ Built:        Fri Dec 16 02:23:22 2016
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.12.5
+ API version:  1.24
+ Go version:   go1.6.4
+ Git commit:   7392c3b
+ Built:        Fri Dec 16 02:23:22 2016
+ OS/Arch:      linux/amd64
+----
+
+

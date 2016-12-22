@@ -5,7 +5,7 @@ tags:
 - docker
 - apache-isis
 
-excerpt: A quick blog describing how to run an Apache Isis application on docker on top of Amazon Lightsail.
+excerpt: A quick blog post describing how to run an Apache Isis application on docker on top of Amazon Lightsail.
 ---
 
 :title: Amazon Lightsail, Docker and Apache Isis
